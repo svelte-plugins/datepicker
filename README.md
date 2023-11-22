@@ -182,8 +182,6 @@ DatePicker CSS variables:
   --datepicker-calendar-header-text-font-weight: var(--datepicker-font-weight-medium);
   --datepicker-calendar-header-text-gap: 8px;
 
-  /**
-    */
   --datepicker-calendar-header-year-align-items: center;
   --datepicker-calendar-header-year-display: flex;
   --datepicker-calendar-header-year-flex-direction: column;
