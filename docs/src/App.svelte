@@ -377,24 +377,6 @@
     font-size: var(--font-size-base);
   }
 
-  .daterange {
-    align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    display: inline-flex;
-    gap: 8px;
-    min-width: 100px;
-    padding: var(--padding-base);
-  }
-
-  .daterange.open {
-    border-bottom: 1px solid var(--color-blue-400);
-  }
-
-  .daterange img {
-    height: 14px;
-    width: 14px;
-  }
-
   @media only screen and (max-width: 800px) {
     .sample {
       height: 600px;
