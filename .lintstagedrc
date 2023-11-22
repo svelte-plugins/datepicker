@@ -1,0 +1,3 @@
+{
+  "./src/**/*.{test.js,js,svelte}": ["eslint -c ./.eslintrc.js --fix", "prettier --write"]
+}

@@ -1,0 +1,78 @@
+<script>
+  import { DatePicker } from '@svelte-plugins/datepicker';
+  import { format } from 'date-fns';
+  import Prism from 'svelte-prismjs';
+
+  export let showTimePicker = false;
+  export let disabledDates = [];
+  export let enableFutureDates = null;
+  export let enablePastDates = null;
+
+  let startDate = new Date();
+  let dateFormat = 'MM/dd/yy';
+  let isOpen = false;
+
+  const toggleDatePicker = () => (isOpen = !isOpen);
+
+  const formatDate = (dateString) => {
+    return dateString && format(new Date(dateString), dateFormat) || '';
+  };
+
+  let formattedStartDate = formatDate(startDate);
+
+  const onChange = () => {
+    startDate = new Date(formattedStartDate);
+  };
+
+  $: formattedStartDate = formatDate(startDate);
+</script>
+
+<DatePicker bind:isOpen bind:startDate {...$$props}>
+  <input type="text" bind:value={formattedStartDate} on:change={onChange} on:click={toggleDatePicker} />
+</DatePicker>
+
+<Prism showLineNumbers={true} code={`
+
+<script>
+  import { DatePicker } from '@svelte-plugins/datepicker';
+  import { format } from 'date-fns';
+
+  let startDate = new Date();
+  let dateFormat = 'MM/dd/yy';
+  let isOpen = false;
+
+  const toggleDatePicker = () => (isOpen = !isOpen);
+
+  const formatDate = (dateString) => {
+    return dateString && format(new Date(dateString), dateFormat) || '';
+  };
+
+  let formattedStartDate = formatDate(startDate);
+
+  const onChange = () => {
+    startDate = new Date(formattedStartDate);
+  };
+
+  $: formattedStartDate = formatDate(startDate);
+</script>
+
+<DatePicker bind:isOpen bind:startDate${showTimePicker ? ' showTimePicker' : ''}${disabledDates.length ? ' disabledDates={' + JSON.stringify(disabledDates)+'}': ''}${enableFutureDates !== null && enableFutureDates ? ' enableFutureDates' : ''}${enablePastDates !== null && !enablePastDates ? ' enablePastDates={false}' : ''}>
+  <input type="text" placeholder="Select date" bind:value={formattedStartDate} on:click={toggleDatePicker} />
+</DatePicker>
+
+<style>
+  input[type="text"] {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 8px;
+  }
+</style>
+`} />
+
+<style>
+  input[type="text"] {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 8px;
+  }
+</style>

@@ -1,0 +1,7 @@
+.*
+!.gitignore
+*.log
+
+# generated
+build
+/node_modules

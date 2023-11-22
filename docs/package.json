@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@svelte-plugins/datepicker": "../",
+    "@sveltejs/vite-plugin-svelte": "^1.0.2",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "rollup-plugin-scss": "^3.0.0",
+    "sass": "^1.54.5",
+    "svelte": "^3.49.0",
+    "svelte-prismjs": "^1.0.2",
+    "vite": "^3.0.9"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  }
+}

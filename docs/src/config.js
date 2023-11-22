@@ -1,0 +1,40 @@
+const today = new Date();
+
+export const defaultConfig = {
+  startDate: today,
+  endDate: today,
+  startDateTime: '00:00',
+  endDateTime: '00:00',
+  today,
+  defaultYear: today.getFullYear(),
+  defaultMonth: today.getMonth(),
+  startOfWeek: 0,
+  isMultipane: false,
+  isRange: false,
+  isOpen: false,
+  align: 'left',
+  theme: '',
+  disabledDates: [],
+  onDayClick: () => { },
+  showYearControls: true,
+  showPresets: false,
+  showTimePicker: false,
+  enableFutureDates: false,
+  enablePastDates: true,
+  presetLabels: ['Today', 'Last 7 Days', 'Last 30 Days', 'Last 60 Days', 'Last 90 Days', 'Last Year'],
+  dowLabels: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+  monthLabels: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ]
+};
