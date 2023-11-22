@@ -1,124 +1,115 @@
-# @svelte-plugins/tooltips
+# @svelte-plugins/datepicker
 
-A simple tooltip action and component designed for Svelte.
+A simple datepicker component designed for Svelte.
 
-Try it in the [Svelte REPL](https://svelte.dev/repl/e63e262a91834400aa567b9b0d20675a?version=3.49.0).
+Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146decbd?version=4.2.7).
 
 ## Install
 
 ```bash
-yarn add -D @svelte-plugins/tooltips
+yarn add -D @svelte-plugins/datepicker
 
 # or with NPM
 
-npm i -D @svelte-plugins/tooltips
+npm i -D @svelte-plugins/datepicker
 ```
 
-## Using the Tooltip component
+## Using the DatePicker component
 ```svelte
 <script>
-  import { Tooltip } from "@svelte-plugins/tooltips";
+  import { DatePicker } from "@svelte-plugins/datepicker";
+  import { format } from 'date-fns';
+
+  let startDate = new Date();
+  let dateFormat = 'MM/dd/yy';
+  let isOpen = false;
+
+  const toggleDatePicker = () => (isOpen = !isOpen);
+
+  const formatDate = (dateString) => {
+    return dateString && format(new Date(dateString), dateFormat) || '';
+  };
+
+  let formattedStartDate = formatDate(startDate);
+
+  const onChange = () => {
+    startDate = new Date(formattedStartDate);
+  };
+
+  $: formattedStartDate = formatDate(startDate);
 </script>
 
-<Tooltip content="Hello world!">
- Check out my tooltip
-</Tooltip>
-```
+<DatePicker bind:isOpen bind:startDate>
+  <input type="text" placeholder="Select date" bind:value={formattedStartDate} on:click={toggleDatePicker} />
+</DatePicker>
 
-## Using the Tooltip action
-
-```svelte
-<script>
-  import { tooltip } from "@svelte-plugins/tooltips";
-</script>
-
-Checkout out my <u title="Hello World!" use:tooltip>tooltip</u>
-
-Checkout out my <u use:tooltip={{ content: 'Hello World!' }}>tooltip</u>
+<style>
+  input[type="text"] {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 8px;
+  }
+</style>
 ```
 
 ## API
 
 ### Props
-| Prop         | Description                                                         | Value                                           |
-| :----------- | :------------------------------------------------------------------ | :---------------------------------------------- |
-| action       | The action that triggers the tooltip (hover | click | prop)         | `string` (default: `hover`)                     |
-| animation    | The animation to apply to the tooltip                               | `string` (default: ``)                          |
-| arrow        | If `false`, the tooltip arrow will not be shown.                    | `boolean` (default: `true`)                     |
-| autoPosition | Adjust tooltip position if viewport clipping occurs                 | `string` (default: `false`)                     |
-| content      | The string or object containing componentref and props              | `string` | `object` component (default: ``)     |
-| maxWidth     | The max allowable width of the tooltip content                      | `number` (default: `200`)                       |
-| position     | The position where the tooltip should appear relative to its parent | `string` (default: `top`)                       |
-| theme        | The CSS theme class name                                            | `string` (default: ``)                          |
-| show         | Allows you to manually control the tooltip visibility               | `boolean` (default: `false`)                    |
-| style        | The object containing theme variable overrides                      | `object` (default: `null`)                      |
+| Prop              | Description                                                                           | Default                     |
+| :---------------- | :------------------------------------------------------------------------------------ | :-------------------------- |
+| startDate	        | The start date string or date object.	                                                | `object` (default: `null`)
+| startDateTime	    | The start date time string in 24 hour format.	                                        | `string` (default: `00:00`)
+| endDateTime	      | The end date time string in 24 hour format.                                           | `string` (default: `00:00`)
+| defaultYear	      |	The year you want to show as the default.	                                            | `number` (default: `2023`)
+| align	            | The edge alignment of the datepicker.                                                 | `string` (default: `left`)
+| isRange	          |	Changes the date picker into a range picker and allows start and end date selection.  | `boolean` (default: `false`)
+| isMultipane	      |	If true, two calendar months will be shown side-by-side instead of one.               | `boolean` (default: `false`)
+| isOpen            |	If true, the picker will be shown without user interaction.	                          | `boolean` (default: `false`)
+| showPresets	      |	If true, the picker will show the preset ranges for selection.	                      | `boolean` (default: `false`)
+| showYearControls  |	If true, the picker will hide the year navigation controls.	                          | `boolean` (default: `false`)
+| showTimePicker	  |	If true, the picker will show the time picker.	                                      | `boolean` (default: `false`)
+| enableFutureDates	|	If true, the picker will allow the user to select future dates.                       | `boolean` (default: `false`)
+| enablePastDates	  |	If disabled, the picker will prevent the user from selecting anything prior to today.	| `boolean` (default: `true`)
 
-#### Using components as content
-| Prop              | Description                                                    | Value                               |
-| :-----------------| :------------------------------------------------------------- | :---------------------------------- |
-| content.component | Svelte component                                               | `component` (default: `null`)       |
-| content.props     | Any component propeties                                        | `object` (default: `null`)          |
-
-
-```svelte
-<script>
-  import ComponentAsTooltip from './ComponentAsTooltip';
-</script>
-
-Checkout out my <span use:tooltip={{ content: { component: ComponentAsTooltip, props: { title: 'Hello World!' } } }}>tooltip</span>
-```
 
 ## Theming
-You can customize tooltips theme using several methods:
+You can customize DatePicker theme using several methods:
 - Assign a theme class name via the `theme` property that includes all of your CSS variables overrides
 - Define the overrides directly using the `style` property
 - Override the CSS variables globally
 
-Tooltip CSS variables:
+DatePicker CSS variables:
 
 ```css
---tooltip-arrow-size: 10px;
---tooltip-background-color: rgba(0, 0, 0, 0.9);
---tooltip-border-radius: 4px;
---tooltip-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.25);
---tooltip-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+---arrow-size: 10px;
+---background-color: rgba(0, 0, 0, 0.9);
+---border-radius: 4px;
+---box-shadow: 0 1px 20px rgba(0, 0, 0, 0.25);
+---font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
   'Helvetica Neue', sans-serif;
---tooltip-font-size: 14px;
---tooltip-font-weight: 500;
---tooltip-line-height: 1.25rem;
---tooltip-color: #fff;
---tooltip-offset-x: 12px;
---tooltip-offset-y: 12px;
---tooltip-padding: 12px;
---tooltip-white-space-hidden: nowrap;
---tooltip-white-space-shown: normal;
---tooltip-z-index: 100;
+---font-size: 14px;
+---font-weight: 500;
+---line-height: 1.25rem;
+---color: #fff;
+---offset-x: 12px;
+---offset-y: 12px;
+---padding: 12px;
+---white-space-hidden: nowrap;
+---white-space-shown: normal;
+---z-index: 100;
 ```
 
 ### Using the theme property
 
 ```svelte
-// action
-<span title="hello world!" use:tooltip={{ theme: 'custom-tooltip' }}>Hover over me</span>
-
-// component
-<Tooltip content="hello world!" theme="custom-tooltip">Hover over me</Tooltip>
+<DatePicker ... theme="custom-datepicker">...</DatePicker>
 
 <style>
-  :global(.tooltip.custom-tooltip) {
-    --tooltip-background-color: hotpink;
-    --tooltip-box-shadow: 0 1px 8px pink;
+  :global(.datepicker.custom-datepicker) {
+    ---background-color: hotpink;
+    ---box-shadow: 0 1px 8px pink;
   }
 </style>
-```
-
-### Using the style property
-```svelte
-// action
-<span title="hello world!" use:tooltip={{ style: { backgroundColor: 'blue', borderRadius: '10px' } }}>Hover over me</span>
-
-// component
-<Tooltip content="hello world!" style={{ style: { backgroundColor: 'blue' } }}>Hover over me</Tooltip>
 ```
 
 ## Changelog
