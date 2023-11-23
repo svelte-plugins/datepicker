@@ -116,6 +116,11 @@ export interface ComponentProps {
   presetLabels: string[];
 
   /**
+   * An array of preset date ranges with labels and start/end timestamps.
+   */
+  presetRanges: Object[];
+
+  /**
    * An array of day-of-week labels.
    */
   dowLabels: string[];

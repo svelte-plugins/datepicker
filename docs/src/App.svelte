@@ -241,6 +241,19 @@
         </ul>]
       </td>
     </tr>
+		<tr>
+      <td valign="top">presetRanges</td>
+      <td valign="top"><code>array</code></td>
+      <td valign="top">An array of objects containing preset configurations.</td>
+      <td valign="top">
+        [&lbrace;&nbsp;&nbsp;
+        <ul class="clean">
+          <li>&nbsp;&nbsp;<code>"label": "string"</code>,</li>
+          <li>&nbsp;&nbsp;<code>"start": "Date"</code>,</li>
+          <li>&nbsp;&nbsp;<code>"end": "Date"</code></li>
+        </ul>&rbrace;]
+      </td>
+    </tr>
   </table>
 
   <h2>Examples</h2>
