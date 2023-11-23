@@ -62,7 +62,7 @@
 
 <style>
   input[type="text"] {
-    border: 1px solid #eee;
+    border: 1px solid #e8e9ea;
     border-radius: 4px;
     padding: 8px;
   }
@@ -71,7 +71,7 @@
 
 <style>
   input[type="text"] {
-    border: 1px solid #eee;
+    border: 1px solid #e8e9ea;
     border-radius: 4px;
     padding: 8px;
   }

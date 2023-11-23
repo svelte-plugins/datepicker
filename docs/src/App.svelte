@@ -1,5 +1,4 @@
 <script>
-  import { format } from 'date-fns';
   import { DatePicker } from '@svelte-plugins/datepicker';
 
   import { RangePicker, SinglePicker } from './examples';
@@ -346,35 +345,35 @@
 
   table tr th,
   table tr td {
-    padding: var(--padding-large) var(--padding-xlarge);
+    padding: 16px 24px;
     text-align: left;
   }
 
   table tr td:first-child {
-    font-weight: var(--font-weight-medium);
+    font-weight: 600;
   }
 
 
   table tr td small {
-    color: var(--color-gray-700);
+    color: #5d656f;
   }
 
   table tr td code {
-    font-size: var(--font-size-small);
+    font-size: 11px;
   }
 
   table tr th {
-    background-color: var(--color-gray-0);
-    border-bottom: 1px solid var(--border-color);
-    color: var(--color-text);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-medium);
+    background-color: #fafafa;
+    border-bottom: 1px solid #e8e9ea;
+    color: #21333d;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   table tr td {
-    border-bottom: 1px solid var(--color-gray-200);
-    color: var(--color-gray-800);
-    font-size: var(--font-size-base);
+    border-bottom: 1px solid #eceff1;
+    color: #454f5a;
+    font-size: 14px;
   }
 
   @media only screen and (max-width: 800px) {

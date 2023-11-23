@@ -1,8 +1,8 @@
 {
   "name": "@svelte-plugins/datepicker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
-  "description": "A simple datepicker designed for Svelte.",
+  "description": "A simple datepicker component designed for Svelte.",
   "author": "Kieran Boyle (https://github.com/dysfunc)",
   "svelte": "./src/index.js",
   "types": "./src/index.d.ts",

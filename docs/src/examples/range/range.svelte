@@ -40,7 +40,9 @@
     bind:startDate
     bind:endDate
     isRange
-    {...$$props}
+    {isMultipane}
+    {showPresets}
+    {...$$restProps}
   >
     <div class="date-field" on:click={toggleDatePicker} class:open={isOpen}>
       <i class="icon-calendar" />
@@ -117,15 +119,15 @@
   .date-field {
     align-items: center;
     background-color: #fff;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e8e9ea;
     display: inline-flex;
     gap: 8px;
     min-width: 100px;
-    padding: var(--padding-base);
+    padding: 16px;
   }
 
   .date-field.open {
-    border-bottom: 1px solid var(--color-blue-400);
+    border-bottom: 1px solid #0087ff;
   }
 
   .date-field .icon-calendar {
@@ -169,15 +171,15 @@
   .date-field {
     align-items: center;
     background-color: #fff;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e8e9ea;
     display: inline-flex;
     gap: 8px;
     min-width: 100px;
-    padding: var(--padding-base);
+    padding: 16px;
   }
 
   .date-field.open {
-    border-bottom: 1px solid var(--color-blue-400);
+    border-bottom: 1px solid #0087ff;
   }
 
   .date-field .icon-calendar {
