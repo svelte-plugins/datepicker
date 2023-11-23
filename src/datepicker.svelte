@@ -1071,6 +1071,20 @@
     --datepicker-calendar-header-month-nav-text-align: center;
     --datepicker-calendar-header-month-nav-width: 32px;
 
+    --datepicker-calendar-header-month-nav-icon-next-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgB7ZTLCYAwEERHbcASUpIlaAd2YDoxlmIX3ixFEwwYQQL5kCWwD94ph5mwywIMUzmLlYRBe1lXENBrT+oSgktwiepLNJ63EWkl3AOltBMCkHh/kEv5F9SCGN8IzKntEYfAdwQb0kYaHO4uoUJBBIdzOAoiKMMNQ47wDvEceA7Zrp3BMLVyA56LVFYQOkngAAAAAElFTkSuQmCC') no-repeat center center;
+    --datepicker-calendar-header-month-nav-icon-next-background-size: 16px 16px;
+    --datepicker-calendar-header-month-nav-icon-next-filter: invert(0);
+    --datepicker-calendar-header-month-nav-icon-next-height: 16px;
+    --datepicker-calendar-header-month-nav-icon-next-margin: auto;
+    --datepicker-calendar-header-month-nav-icon-next-width: 16px;
+
+    --datepicker-calendar-header-month-nav-icon-prev-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACKSURBVHgB7ZbBDYAgDEW/xgEcgZHcQDYRJ5ER3EhHcAPtAQMHQwIiSNKXvAMH+CUNDQDDVM5kLMJCnsYBmXHDN1IgIxzO4QIZ+Ty8gT9cOuuZ3BHHQa4hGxTszVOpnoJaFMbXAk2OzvpNC+7zojYVewFcBBdRVRE9CqCR4EvWIR4JO5iC5jzD/IoLU/FXPXheCj0AAAAASUVORK5CYII=') no-repeat center center;
+    --datepicker-calendar-header-month-nav-icon-prev-background-size: 16px 16px;
+    --datepicker-calendar-header-month-nav-icon-prev-filter: invert(0);
+    --datepicker-calendar-header-month-nav-icon-prev-height: 16px;
+    --datepicker-calendar-header-month-nav-icon-prev-margin: auto;
+    --datepicker-calendar-header-month-nav-icon-prev-width: 16px;
+
     /**
      * Calendar Header Text
      */
@@ -1100,6 +1114,20 @@
     --datepicker-calendar-header-year-nav-padding: 0;
     --datepicker-calendar-header-year-nav-width: 12px;
     --datepicker-calendar-header-year-nav-icon-font-size: 13px;
+
+    --datepicker-calendar-header-year-nav-icon-next-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABuSURBVHgB7c7BCYAwDIXhBy7gKB2hm9Vx3UJzqCASRWOTHvo+yDG8HyAiGt2Ef7LcLLeigyK31SsIdh4Pj9DGwyKu40u9kAht/OAe8TTuHvFm3C3iy3jziGQYv4vIMMjGcS0iwSjBWN/on4hoADu88UW4KXFVfgAAAABJRU5ErkJggg==') no-repeat center center;
+    --datepicker-calendar-header-year-nav-icon-next-background-size: 12px 12px;
+    --datepicker-calendar-header-year-nav-icon-next-display: block;
+    --datepicker-calendar-header-year-nav-icon-next-filter: invert(0);
+    --datepicker-calendar-header-year-nav-icon-next-height: 12px;
+    --datepicker-calendar-header-year-nav-icon-next-width: 12px;
+
+    --datepicker-calendar-header-year-nav-icon-prev-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB3SURBVHgB7dTRCYAwDATQAxdwlI6QzZpx3UIrKJSC1aS2fngP7kvi3VcBIqK/m26+S8qcssBHWu5Dynokwi5m9wIHyX5gHRGL2wAndYwoyxWN1DDi9XLLiG7lT0Z0L6+NGFZ+NWJoeW2EYjD9svy0PzACIiJqsAHF2EaCcjFGaQAAAABJRU5ErkJggg==') no-repeat center center;
+    --datepicker-calendar-header-year-nav-icon-prev-background-size: 12px 12px;
+    --datepicker-calendar-header-year-nav-icon-prev-display: block;
+    --datepicker-calendar-header-year-nav-icon-prev-filter: invert(0);
+    --datepicker-calendar-header-year-nav-icon-prev-height: 12px;
+    --datepicker-calendar-header-year-nav-icon-prev-width: 12px;
 
     /**
      * Presets
@@ -1192,9 +1220,9 @@
     --datepicker-calendar-day-border: 1px solid transparent;
     --datepicker-calendar-day-border: 1px solid transparent;
     --datepicker-calendar-day-border-radius: 100%;
-    --datepicker-calendar-day-color: ##232a32;
+    --datepicker-calendar-day-color: #232a32;
     --datepicker-calendar-day-color-disabled: #b9bdc1;
-    --datepicker-calendar-day-color-hover: ##232a32;
+    --datepicker-calendar-day-color-hover: #232a32;
     --datepicker-calendar-day-cursor: pointer;
     --datepicker-calendar-day-cursor-disabled: default;
     --datepicker-calendar-day-display: flex;
@@ -1207,6 +1235,13 @@
     --datepicker-calendar-day-text-align: center;
     --datepicker-calendar-day-width: 40px;
     --datepicker-calendar-day-zindex-focus: 12;
+
+    /**
+     * Calendar Days Outside of Month
+     */
+    --datepicker-calendar-day-other-border: 0;
+    --datepicker-calendar-day-other-box-shadow: none;
+    --datepicker-calendar-day-other-color: #d1d3d6;
 
     /**
      * Calendar Today
@@ -1231,8 +1266,13 @@
     /**
      * Calendar Range Start & End
      */
-    --datepicker-calendar-range-start-box-shadow: inset 0 -1px #fff, inset -20px 0 0 var(--datepicker-state-hover);
-    --datepicker-calendar-range-end-box-shadow: inset 0 -1px #fff, inset 20px 0 0 var(--datepicker-state-hover);
+    --datepicker-calendar-range-start-box-shadow: inset -20px 0 0 var(--datepicker-state-hover);
+    --datepicker-calendar-range-end-box-shadow: inset 20px 0 0 var(--datepicker-state-hover);
+    --datepicker-calendar-range-start-box-shadow-selected: inset -20px 0 0 #eceff1;
+    --datepicker-calendar-range-end-box-shadow-selected: inset 20px 0 0 #eceff1;
+
+    --datepicker-calendar-range-start-end-background: #f5f5f5;
+    --datepicker-calendar-range-start-end-color: #232a32;
 
     /**
      * Calendar Range Selected
@@ -1241,6 +1281,17 @@
     --datepicker-calendar-range-selected-border-radius: 20px;
     --datepicker-calendar-range-selected-color: #fff;
     --datepicker-calendar-range-selected-font-weight: var(--datepicker-font-weight-medium);
+
+    --datepicker-calendar-range-selected-start-border-radius: 20px;
+
+    /**
+     * Calendar Range Hover
+     */
+    --datepicker-calendar-range-included-background: #eceff1;
+    --datepicker-calendar-range-included-box-shadow: inset 20px 0 0 #eceff1;
+    --datepicker-calendar-range-included-color: #232a32;
+    --datepicker-calendar-range-included-font-weight: var(--datepicker-font-weight-base);
+    --datepicker-calendar-range-included-height: var(--datepicker-calendar-day-height);
   }
 
   .datepicker {
@@ -1529,11 +1580,13 @@
   .datepicker .calendars-container .calendar .date.rangehover.start,
   .datepicker .calendars-container .calendar .date.range.start {
     box-shadow: var(--datepicker-calendar-range-start-box-shadow);
+    height: var(--datepicker-calendar-day-height);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover.end,
   .datepicker .calendars-container .calendar .date.range.end {
     box-shadow: var(--datepicker-calendar-range-end-box-shadow);
+    height: var(--datepicker-calendar-day-height);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover.start span,
@@ -1575,22 +1628,24 @@
 
   .datepicker .calendars-container .calendar .date:not(.rangehover) + .rangehover:not(.end),
   .datepicker .calendars-container .calendar .date:not(.rangehover) + .rangehover.start {
-    box-shadow: inset 0 -1px #fff, inset -20px 0 0 #eceff1 !important;
+    box-shadow: var(--datepicker-calendar-range-start-box-shadow-selected) !important;
+    height: var(--datepicker-calendar-day-height);
   }
 
   .datepicker .calendars-container .calendar .date:not(.rangehover) + .rangehover span,
   .datepicker .calendars-container .calendar .date:not(.rangehover) + .rangehover.start span {
-    border-radius: 20px;
+    border-radius: var(--datepicker-calendar-range-selected-start-border-radius);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover span {
-    background-color: #eceff1;
-    color: #232a32;
-    font-weight: var(--datepicker-font-weight-base);
+    background-color: var(--datepicker-calendar-range-included-background);
+    color: var(--datepicker-calendar-range-included-color);
+    font-weight: var(--datepicker-calendar-range-included-font-weight);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover:hover {
-    box-shadow: inset 0 -1px #fff, inset 20px 0 0 #eceff1;
+    box-shadow: var(--datepicker-calendar-range-included-box-shadow);
+    height: var(--datepicker-calendar-range-included-height);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover:hover span {
@@ -1600,12 +1655,14 @@
 
   .datepicker .calendars-container .calendar .date.rangehover.first:hover,
   .datepicker .calendars-container .calendar .date.rangehover.start {
-    box-shadow: inset 0 -1px #fff, inset -20px 0 0 #eceff1;
+    box-shadow: var(--datepicker-calendar-range-start-box-shadow-selected);
+    height: var(--datepicker-calendar-day-height);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover:not(.start) + .start,
   .datepicker .calendars-container .calendar .date.rangehover.end {
-    box-shadow: inset 0 -1px #fff, inset 20px 0 0 #eceff1;
+    box-shadow: var(--datepicker-calendar-range-end-box-shadow-selected);
+    height: var(--datepicker-calendar-day-height);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover:not(.start) + .start span {
@@ -1614,8 +1671,8 @@
 
   .datepicker .calendars-container .calendar .date.rangehover.start span,
   .datepicker .calendars-container .calendar .date.rangehover.end span {
-    background-color: #f5f5f5;
-    color: #232a32;
+    background-color: var(--datepicker-calendar-range-start-end-background);
+    color: var(--datepicker-calendar-range-start-end-color);
   }
 
   .datepicker .calendars-container .calendar .date.rangehover.start.norange {
@@ -1623,42 +1680,50 @@
   }
 
   .datepicker .calendars-container .calendar .date.rangehover.disabled span {
-    background-color: #eceff1;
-    color: #ffc0b7;
+    background-color: var(--datepicker-calendar-range-background-disabled);
+    color: var(--datepicker-calendar-range-color-disabled);
   }
 
   .datepicker .calendars-container .calendar .date.other {
-    border: 0;
-    box-shadow: none;
-    color: #d1d3d6;
+    border: var(--datepicker-calendar-day-other-border);
+    box-shadow: var(--datepicker-calendar-day-other-box-shadow);
+    color: var(--datepicker-calendar-day-other-color);
   }
 
-  .icon-next-month,
+  .icon-next-month {
+    background: var(--datepicker-calendar-header-month-nav-icon-next-background);
+    background-size: var(--datepicker-calendar-header-month-nav-icon-next-background-size);
+    filter: var(--datepicker-calendar-header-month-nav-icon-next-filter);
+    height: var(--datepicker-calendar-header-month-nav-icon-next-height);
+    margin: var(--datepicker-calendar-header-month-nav-icon-next-margin);
+    width: var(--datepicker-calendar-header-month-nav-icon-next-width);
+  }
+
   .icon-previous-month {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgB7ZTLCYAwEERHbcASUpIlaAd2YDoxlmIX3ixFEwwYQQL5kCWwD94ph5mwywIMUzmLlYRBe1lXENBrT+oSgktwiepLNJ63EWkl3AOltBMCkHh/kEv5F9SCGN8IzKntEYfAdwQb0kYaHO4uoUJBBIdzOAoiKMMNQ47wDvEceA7Zrp3BMLVyA56LVFYQOkngAAAAAElFTkSuQmCC') no-repeat center center;
-    background-size: 16px 16px;
-    margin: auto;
-    height: 16px;
-    width: 16px;
+    background: var(--datepicker-calendar-header-month-nav-icon-prev-background);
+    background-size: var(--datepicker-calendar-header-month-nav-icon-prev-background-size);
+    filter: var(--datepicker-calendar-header-month-nav-icon-prev-filter);
+    height: var(--datepicker-calendar-header-month-nav-icon-prev-height);
+    margin: var(--datepicker-calendar-header-month-nav-icon-prev-margin);
+    width: var(--datepicker-calendar-header-month-nav-icon-prev-width);
   }
 
-  .icon-previous-month {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACKSURBVHgB7ZbBDYAgDEW/xgEcgZHcQDYRJ5ER3EhHcAPtAQMHQwIiSNKXvAMH+CUNDQDDVM5kLMJCnsYBmXHDN1IgIxzO4QIZ+Ty8gT9cOuuZ3BHHQa4hGxTszVOpnoJaFMbXAk2OzvpNC+7zojYVewFcBBdRVRE9CqCR4EvWIR4JO5iC5jzD/IoLU/FXPXheCj0AAAAASUVORK5CYII=') no-repeat center center;
-    background-size: 16px 16px;
-  }
-
-  .icon-next-year,
-  .icon-previous-year {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABuSURBVHgB7c7BCYAwDIXhBy7gKB2hm9Vx3UJzqCASRWOTHvo+yDG8HyAiGt2Ef7LcLLeigyK31SsIdh4Pj9DGwyKu40u9kAht/OAe8TTuHvFm3C3iy3jziGQYv4vIMMjGcS0iwSjBWN/on4hoADu88UW4KXFVfgAAAABJRU5ErkJggg==') no-repeat center center;
-    background-size: 12px 12px;
-    display: block;
-    height: 12px;
-    width: 12px;
+  .icon-next-year {
+    background: var(--datepicker-calendar-header-year-nav-icon-next-background);
+    background-size: var(--datepicker-calendar-header-year-nav-icon-next-background-size);
+    display: var(--datepicker-calendar-header-year-nav-icon-next-display);
+    filter: var(--datepicker-calendar-header-year-nav-icon-next-filter);
+    height: var(--datepicker-calendar-header-year-nav-icon-next-height);
+    width: var(--datepicker-calendar-header-year-nav-icon-next-width);
   }
 
   .icon-previous-year {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB3SURBVHgB7dTRCYAwDATQAxdwlI6QzZpx3UIrKJSC1aS2fngP7kvi3VcBIqK/m26+S8qcssBHWu5Dynokwi5m9wIHyX5gHRGL2wAndYwoyxWN1DDi9XLLiG7lT0Z0L6+NGFZ+NWJoeW2EYjD9svy0PzACIiJqsAHF2EaCcjFGaQAAAABJRU5ErkJggg==') no-repeat center center;
-    background-size: 12px 12px;
+    background: var(--datepicker-calendar-header-year-nav-icon-prev-background);
+    background-size: var(--datepicker-calendar-header-year-nav-icon-prev-background-size);
+    display: var(--datepicker-calendar-header-year-nav-icon-prev-display);
+    filter: var(--datepicker-calendar-header-year-nav-icon-prev-filter);
+    height: var(--datepicker-calendar-header-year-nav-icon-prev-height);
+    width: var(--datepicker-calendar-header-year-nav-icon-prev-width);
   }
 
   @media only screen and (max-width: 800px) {
@@ -1668,7 +1733,7 @@
     }
 
     .datepicker .calendars-container.presets .calendar-presets {
-      border-bottom: 1px solid var(--datepicker-border-color);
+      border-bottom: var(--datepicker-presets-border);
     }
 
     .datepicker .calendars-container .calendar .timepicker {

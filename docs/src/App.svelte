@@ -1,7 +1,7 @@
 <script>
   import { DatePicker } from '@svelte-plugins/datepicker';
 
-  import { RangePicker, SinglePicker } from './examples';
+  import { RangePicker, SinglePicker, ThemePicker } from './examples';
   import { defaultConfig } from './config';
 
   const today = new Date();
@@ -118,6 +118,12 @@
       <td><code>boolean</code></td>
       <td>If disabled, the picker will prevent the user from selecting anything prior to today.</td>
       <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td>theme</td>
+      <td><code>string</code></td>
+      <td>The theme name will be assigned to the theme <b>data-attribute</b> <code>datepicker.[data-picker-theme="theme_value_here"]`</code>.</td>
+      <td><code>empty</code></td>
     </tr>
     <tr>
       <td valign="top">defaultMonth</td>
@@ -287,6 +293,12 @@
   <div class="example">
     <SinglePicker enableFutureDates disabledDates={['11/25/23:11/29/23', '12/10/23', '12/14/23:12/31/23', '1/7/24:1/14/24']} />
   </div>
+
+  <h2>Theme</h2>
+
+  <div class="example">
+    <ThemePicker theme="custom-datepicker" />
+  </div>
 </main>
 
 <style>
@@ -321,7 +333,7 @@
 	}
 
 	.example {
-    background-color: #fafafa; /*#172331;*/
+    background-color: #fafafa;
     border-radius: 8px;
     padding: 16px 16px 10px;
 		margin-bottom: 40px;
@@ -359,7 +371,7 @@
   }
 
   table tr td code {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   table tr th {

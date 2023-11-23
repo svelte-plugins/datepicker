@@ -308,9 +308,8 @@ DatePicker CSS variables:
 <DatePicker ... theme="custom-datepicker">...</DatePicker>
 
 <style>
-  :global(.datepicker.custom-datepicker) {
-    ---background-color: hotpink;
-    ---box-shadow: 0 1px 8px pink;
+  :global(.datepicker[data-picker-theme="custom-datepicker"]) {
+    --datepicker-container-background: hotpink;
   }
 </style>
 ```
