@@ -2,6 +2,7 @@
 
 # except
 !.editorconfig
+!.eslintignore
 !.eslintrc.json
 !.github
 !.gitignore

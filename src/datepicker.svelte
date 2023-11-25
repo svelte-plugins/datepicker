@@ -245,7 +245,7 @@
    */
   const calendarize = (target, offset) => {
     const out = [];
-    const date = new Date(target || new Date);
+    const date = new Date(target || new Date());
     const year = date.getFullYear();
     const month = date.getMonth();
     const days = new Date(year, month + 1, 0).getDate();
@@ -256,8 +256,7 @@
     let week;
 
     while (i < days) {
-      for (j = 0, week = Array(7); j < 7;) {
-
+      for (j = 0, week = Array(7); j < 7; ) {
         while (j < first) {
           week[j++] = 0;
         }
@@ -527,7 +526,7 @@
     const tempEndCompare = normalizeTimestamp(tempEndDate);
     const currentCompare = normalizeTimestamp(currentTimestamp);
 
-    if (!isRange && startCompare || isRange && !endDate && tempEndDate) {
+    if ((!isRange && startCompare) || (isRange && !endDate && tempEndDate)) {
       return startCompare === currentCompare;
     }
 
@@ -898,11 +897,7 @@
                   class="date"
                   class:today={isToday(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:start={isFirstInRange(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
-                  class:end={isLastInRange(
-                    startDateCalendar[weekIndex][dayIndex],
-                    startDateMonth,
-                    startDateYear
-                  )}
+                  class:end={isLastInRange(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:range={inRange(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:rangehover={inRangeHover(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:past={isPastDate(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
@@ -973,11 +968,7 @@
                     class:range={inRange(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:rangehover={inRangeHover(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:start={isFirstInRange(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
-                    class:end={isLastInRange(
-                      endDateCalendar[weekIndex][dayIndex],
-                      endDateMonth,
-                      endDateYear
-                    )}
+                    class:end={isLastInRange(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:past={isPastDate(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:future={isFutureDate(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:first={isFirstDayOfMonth(endDateCalendar[weekIndex][dayIndex])}
@@ -1004,20 +995,23 @@
 </div>
 
 <svelte:head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+  />
 </svelte:head>
 
 <style>
   :root {
     /**
-     * Common CSS variables
+     * Common
      */
     --datepicker-border-color: #e8e9ea;
 
-    --datepicker-border-radius-small: .125rem;
-    --datepicker-border-radius-base: .25rem;
-    --datepicker-border-radius-large: .5rem;
-    --datepicker-border-radius-xlarge: .75rem;
+    --datepicker-border-radius-small: 0.125rem;
+    --datepicker-border-radius-base: 0.25rem;
+    --datepicker-border-radius-large: 0.5rem;
+    --datepicker-border-radius-xlarge: 0.75rem;
     --datepicker-border-radius-xxlarge: 1rem;
     --datepicker-border-radius-xxxlarge: 1.125rem;
 
@@ -1083,7 +1077,8 @@
      * Calendar
      */
     --datepicker-calendar-border: 0;
-    --datepicker-calendar-padding: var(--datepicker-padding-base) var(--datepicker-padding-large) var(--datepicker-padding-xlarge);
+    --datepicker-calendar-padding: var(--datepicker-padding-base) var(--datepicker-padding-large)
+      var(--datepicker-padding-xlarge);
     --datepicker-calendar-position: relative;
     --datepicker-calendar-width: 310px;
 
@@ -1118,14 +1113,16 @@
     --datepicker-calendar-header-month-nav-text-align: center;
     --datepicker-calendar-header-month-nav-width: 32px;
 
-    --datepicker-calendar-header-month-nav-icon-next-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgB7ZTLCYAwEERHbcASUpIlaAd2YDoxlmIX3ixFEwwYQQL5kCWwD94ph5mwywIMUzmLlYRBe1lXENBrT+oSgktwiepLNJ63EWkl3AOltBMCkHh/kEv5F9SCGN8IzKntEYfAdwQb0kYaHO4uoUJBBIdzOAoiKMMNQ47wDvEceA7Zrp3BMLVyA56LVFYQOkngAAAAAElFTkSuQmCC') no-repeat center center;
+    --datepicker-calendar-header-month-nav-icon-next-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgB7ZTLCYAwEERHbcASUpIlaAd2YDoxlmIX3ixFEwwYQQL5kCWwD94ph5mwywIMUzmLlYRBe1lXENBrT+oSgktwiepLNJ63EWkl3AOltBMCkHh/kEv5F9SCGN8IzKntEYfAdwQb0kYaHO4uoUJBBIdzOAoiKMMNQ47wDvEceA7Zrp3BMLVyA56LVFYQOkngAAAAAElFTkSuQmCC')
+      no-repeat center center;
     --datepicker-calendar-header-month-nav-icon-next-background-size: 16px 16px;
     --datepicker-calendar-header-month-nav-icon-next-filter: invert(0);
     --datepicker-calendar-header-month-nav-icon-next-height: 16px;
     --datepicker-calendar-header-month-nav-icon-next-margin: auto;
     --datepicker-calendar-header-month-nav-icon-next-width: 16px;
 
-    --datepicker-calendar-header-month-nav-icon-prev-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACKSURBVHgB7ZbBDYAgDEW/xgEcgZHcQDYRJ5ER3EhHcAPtAQMHQwIiSNKXvAMH+CUNDQDDVM5kLMJCnsYBmXHDN1IgIxzO4QIZ+Ty8gT9cOuuZ3BHHQa4hGxTszVOpnoJaFMbXAk2OzvpNC+7zojYVewFcBBdRVRE9CqCR4EvWIR4JO5iC5jzD/IoLU/FXPXheCj0AAAAASUVORK5CYII=') no-repeat center center;
+    --datepicker-calendar-header-month-nav-icon-prev-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACKSURBVHgB7ZbBDYAgDEW/xgEcgZHcQDYRJ5ER3EhHcAPtAQMHQwIiSNKXvAMH+CUNDQDDVM5kLMJCnsYBmXHDN1IgIxzO4QIZ+Ty8gT9cOuuZ3BHHQa4hGxTszVOpnoJaFMbXAk2OzvpNC+7zojYVewFcBBdRVRE9CqCR4EvWIR4JO5iC5jzD/IoLU/FXPXheCj0AAAAASUVORK5CYII=')
+      no-repeat center center;
     --datepicker-calendar-header-month-nav-icon-prev-background-size: 16px 16px;
     --datepicker-calendar-header-month-nav-icon-prev-filter: invert(0);
     --datepicker-calendar-header-month-nav-icon-prev-height: 16px;
@@ -1162,14 +1159,16 @@
     --datepicker-calendar-header-year-nav-width: 12px;
     --datepicker-calendar-header-year-nav-icon-font-size: 13px;
 
-    --datepicker-calendar-header-year-nav-icon-next-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABuSURBVHgB7c7BCYAwDIXhBy7gKB2hm9Vx3UJzqCASRWOTHvo+yDG8HyAiGt2Ef7LcLLeigyK31SsIdh4Pj9DGwyKu40u9kAht/OAe8TTuHvFm3C3iy3jziGQYv4vIMMjGcS0iwSjBWN/on4hoADu88UW4KXFVfgAAAABJRU5ErkJggg==') no-repeat center center;
+    --datepicker-calendar-header-year-nav-icon-next-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABuSURBVHgB7c7BCYAwDIXhBy7gKB2hm9Vx3UJzqCASRWOTHvo+yDG8HyAiGt2Ef7LcLLeigyK31SsIdh4Pj9DGwyKu40u9kAht/OAe8TTuHvFm3C3iy3jziGQYv4vIMMjGcS0iwSjBWN/on4hoADu88UW4KXFVfgAAAABJRU5ErkJggg==')
+      no-repeat center center;
     --datepicker-calendar-header-year-nav-icon-next-background-size: 12px 12px;
     --datepicker-calendar-header-year-nav-icon-next-display: block;
     --datepicker-calendar-header-year-nav-icon-next-filter: invert(0);
     --datepicker-calendar-header-year-nav-icon-next-height: 12px;
     --datepicker-calendar-header-year-nav-icon-next-width: 12px;
 
-    --datepicker-calendar-header-year-nav-icon-prev-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB3SURBVHgB7dTRCYAwDATQAxdwlI6QzZpx3UIrKJSC1aS2fngP7kvi3VcBIqK/m26+S8qcssBHWu5Dynokwi5m9wIHyX5gHRGL2wAndYwoyxWN1DDi9XLLiG7lT0Z0L6+NGFZ+NWJoeW2EYjD9svy0PzACIiJqsAHF2EaCcjFGaQAAAABJRU5ErkJggg==') no-repeat center center;
+    --datepicker-calendar-header-year-nav-icon-prev-background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB3SURBVHgB7dTRCYAwDATQAxdwlI6QzZpx3UIrKJSC1aS2fngP7kvi3VcBIqK/m26+S8qcssBHWu5Dynokwi5m9wIHyX5gHRGL2wAndYwoyxWN1DDi9XLLiG7lT0Z0L6+NGFZ+NWJoeW2EYjD9svy0PzACIiJqsAHF2EaCcjFGaQAAAABJRU5ErkJggg==')
+      no-repeat center center;
     --datepicker-calendar-header-year-nav-icon-prev-background-size: 12px 12px;
     --datepicker-calendar-header-year-nav-icon-prev-display: block;
     --datepicker-calendar-header-year-nav-icon-prev-filter: invert(0);
@@ -1780,6 +1779,7 @@
     }
 
     .datepicker .calendars-container.presets .calendar-presets {
+      border-right: 0;
       border-bottom: var(--datepicker-presets-border);
     }
 
@@ -1798,12 +1798,6 @@
 
     .datepicker .calendars-container .calendar header button.hide {
       opacity: 1;
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    .datepicker .calendars-container.presets .calendar-presets {
-      display: none;
     }
   }
 </style>
