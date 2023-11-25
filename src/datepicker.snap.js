@@ -4,34 +4,34 @@ exports[`Components: DatePicker > should render the component 1`] = `
 <body>
   <div>
     <div
-      class="datepicker svelte-yiqyjf"
+      class="datepicker svelte-1nmg4fl"
       data-picker-theme=""
     >
        
       <div
-        class="calendars-container svelte-yiqyjf"
+        class="calendars-container svelte-1nmg4fl"
       >
          
         <div
-          class="calendar svelte-yiqyjf"
+          class="calendar svelte-1nmg4fl"
         >
           <header
-            class="svelte-yiqyjf"
+            class="svelte-1nmg4fl"
           >
             <button
-              class="svelte-yiqyjf"
+              class="svelte-1nmg4fl"
             >
               <div
                 aria-label="Previous month"
-                class="icon-previous-month svelte-yiqyjf"
+                class="icon-previous-month svelte-1nmg4fl"
               />
             </button>
              
             <span
-              class="svelte-yiqyjf"
+              class="svelte-1nmg4fl"
             >
               <div
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 November
                  
@@ -39,74 +39,74 @@ exports[`Components: DatePicker > should render the component 1`] = `
               </div>
                
               <div
-                class="years svelte-yiqyjf"
+                class="years svelte-1nmg4fl"
               >
                 <button
-                  class="svelte-yiqyjf"
+                  class="svelte-1nmg4fl"
                 >
                   <i
                     aria-label="Next year"
-                    class="icon-next-year svelte-yiqyjf"
+                    class="icon-next-year svelte-1nmg4fl"
                   />
                 </button>
                  
                 <button
-                  class="svelte-yiqyjf"
+                  class="svelte-1nmg4fl"
                 >
                   <i
                     aria-label="Previous year"
-                    class="icon-previous-year svelte-yiqyjf"
+                    class="icon-previous-year svelte-1nmg4fl"
                   />
                 </button>
               </div>
             </span>
              
             <button
-              class="svelte-yiqyjf"
+              class="svelte-1nmg4fl"
             >
               <div
                 aria-label="Next month"
-                class="icon-next-month svelte-yiqyjf"
+                class="icon-next-month svelte-1nmg4fl"
               />
             </button>
           </header>
            
            
           <div
-            class="month svelte-yiqyjf"
+            class="month svelte-1nmg4fl"
           >
             <span
-              class="dow svelte-yiqyjf"
+              class="dow svelte-1nmg4fl"
             >
               Su
             </span>
             <span
-              class="dow svelte-yiqyjf"
+              class="dow svelte-1nmg4fl"
             >
               Mo
             </span>
             <span
-              class="dow svelte-yiqyjf"
+              class="dow svelte-1nmg4fl"
             >
               Tu
             </span>
             <span
-              class="dow svelte-yiqyjf"
+              class="dow svelte-1nmg4fl"
             >
               We
             </span>
             <span
-              class="dow svelte-yiqyjf"
+              class="dow svelte-1nmg4fl"
             >
               Th
             </span>
             <span
-              class="dow svelte-yiqyjf"
+              class="dow svelte-1nmg4fl"
             >
               Fr
             </span>
             <span
-              class="dow svelte-yiqyjf"
+              class="dow svelte-1nmg4fl"
             >
               Sa
             </span>
@@ -114,31 +114,31 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <div
-              class="date other svelte-yiqyjf"
+              class="date other svelte-1nmg4fl"
             >
                
             </div>
             
             
             <div
-              class="date other svelte-yiqyjf"
+              class="date other svelte-1nmg4fl"
             >
                
             </div>
             
             
             <div
-              class="date other svelte-yiqyjf"
+              class="date other svelte-1nmg4fl"
             >
                
             </div>
             
             
             <button
-              class="date svelte-yiqyjf first"
+              class="date svelte-1nmg4fl first"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 1
               </span>
@@ -147,10 +147,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 2
               </span>
@@ -159,10 +159,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 3
               </span>
@@ -171,10 +171,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 4
               </span>
@@ -186,10 +186,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 5
               </span>
@@ -198,10 +198,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 6
               </span>
@@ -210,10 +210,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 7
               </span>
@@ -222,10 +222,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 8
               </span>
@@ -234,10 +234,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 9
               </span>
@@ -246,10 +246,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 10
               </span>
@@ -258,10 +258,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 11
               </span>
@@ -273,10 +273,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 12
               </span>
@@ -285,10 +285,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 13
               </span>
@@ -297,10 +297,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 14
               </span>
@@ -309,10 +309,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 15
               </span>
@@ -321,10 +321,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 16
               </span>
@@ -333,10 +333,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 17
               </span>
@@ -345,10 +345,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 18
               </span>
@@ -360,10 +360,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 19
               </span>
@@ -372,10 +372,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 20
               </span>
@@ -384,10 +384,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 21
               </span>
@@ -396,10 +396,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 22
               </span>
@@ -408,10 +408,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf"
+              class="date svelte-1nmg4fl"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 23
               </span>
@@ -420,10 +420,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf today"
+              class="date svelte-1nmg4fl today"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 24
               </span>
@@ -432,10 +432,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf future"
+              class="date svelte-1nmg4fl future"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 25
               </span>
@@ -447,10 +447,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf future"
+              class="date svelte-1nmg4fl future"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 26
               </span>
@@ -459,10 +459,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf future"
+              class="date svelte-1nmg4fl future"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 27
               </span>
@@ -471,10 +471,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf future"
+              class="date svelte-1nmg4fl future"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 28
               </span>
@@ -483,10 +483,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf future"
+              class="date svelte-1nmg4fl future"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 29
               </span>
@@ -495,10 +495,10 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <button
-              class="date svelte-yiqyjf future last"
+              class="date svelte-1nmg4fl future last"
             >
               <span
-                class="svelte-yiqyjf"
+                class="svelte-1nmg4fl"
               >
                 30
               </span>
@@ -507,14 +507,14 @@ exports[`Components: DatePicker > should render the component 1`] = `
             
             
             <div
-              class="date other svelte-yiqyjf"
+              class="date other svelte-1nmg4fl"
             >
                
             </div>
             
             
             <div
-              class="date other svelte-yiqyjf"
+              class="date other svelte-1nmg4fl"
             >
                
             </div>
