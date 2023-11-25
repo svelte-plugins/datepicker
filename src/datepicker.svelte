@@ -1779,6 +1779,7 @@
     }
 
     .datepicker .calendars-container.presets .calendar-presets {
+      border-right: 0;
       border-bottom: var(--datepicker-presets-border);
     }
 

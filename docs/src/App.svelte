@@ -403,14 +403,7 @@
 
   @media only screen and (max-width: 800px) {
     .sample {
-      height: 600px;
-      margin: 48px auto;
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    .sample {
-      height: 400px;
+      height: 660px;
       margin: 48px auto;
     }
   }
