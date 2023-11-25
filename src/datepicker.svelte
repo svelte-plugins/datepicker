@@ -1,16 +1,16 @@
 <script>
-  import calendarize from 'calendarize';
+  // @ts-check
   import { clickOutside } from './actions';
 
   /**
    * Represents the start date for a date picker.
-   * @type {Date | null}
+   * @type {any}
    */
   export let startDate = null;
 
   /**
    * Represents the end date for a date picker.
-   * @type {Date | null}
+   * @type {any}
    */
   export let endDate = null;
 
@@ -220,21 +220,58 @@
 
   /**
    * Stores the possible end date for a date range.
-   * @type {string | null}
+   * @type {any}
    */
   let tempEndDate;
 
   /**
    * Stores the start date for any revert operation.
-   * @type {Date | null}
+   * @type {any}
    */
   let prevStartDate;
 
   /**
    * Stores the end date for any revert operation.
-   * @type {Date | null}
+   * @type {any}
    */
   let prevEndDate;
+
+  /**
+   * Generates a calendar representation as a two-dimensional array. (Pulled from github.com/lukeed/calendarize)
+   *
+   * @param {Date} target - The target date for the calendar (defaults to the current date if not provided).
+   * @param {number} offset - The offset for the first day of the week (0 for Sunday, 1 for Monday, etc.).
+   * @returns {Array<Array<number>>} A two-dimensional array representing the calendar.
+   */
+  const calendarize = (target, offset) => {
+    const out = [];
+    const date = new Date(target || new Date);
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const days = new Date(year, month + 1, 0).getDate();
+
+    let first = new Date(year, month, 1 - (offset | 0)).getDay();
+    let i = 0;
+    let j = 0;
+    let week;
+
+    while (i < days) {
+      for (j = 0, week = Array(7); j < 7;) {
+
+        while (j < first) {
+          week[j++] = 0;
+        }
+
+        week[j++] = ++i > days ? 0 : i;
+
+        first = 0;
+      }
+
+      out.push(week);
+    }
+
+    return out;
+  };
 
   /**
    * Creates a timestamp for a given year, month, and day.
@@ -257,11 +294,11 @@
   /**
    * Normalizes a timestamp by setting the time to midnight (00:00:00.000).
    *
-   * @param {number} timestamp - The timestamp to normalize.
+   * @param {any} timestamp - The timestamp to normalize.
    * @returns {number} - The normalized timestamp.
    */
-  const normalizeTimestamp = (o) => {
-    const date = new Date(o);
+  const normalizeTimestamp = (timestamp) => {
+    const date = new Date(timestamp);
     date.setHours(0, 0, 0, 0);
     return date.getTime();
   };
@@ -410,6 +447,7 @@
    * @param {number} year - The year of the clicked date.
    */
   const onClick = function (e, day, month, year) {
+    // @ts-ignore
     const classes = e.target?.closest('.date').className;
 
     if (classes.includes('future') || classes.includes('past') || classes.includes('disabled')) {
@@ -444,9 +482,9 @@
   /**
    * Checks if a date is within a specified range.
    *
-   * @param {Date} start - The start date of the range.
-   * @param {Date} end - The end date of the range.
-   * @param {Date} selected - The date to check.
+   * @param {any} start - The start date of the range.
+   * @param {any} end - The end date of the range.
+   * @param {any} selected - The date to check.
    * @returns {boolean} - True if the date is within the range, false otherwise.
    */
   const isDateInRange = (start, end, selected) => {
@@ -528,6 +566,7 @@
    */
   const isDisabled = (day, month, year) => {
     const selectedDateTimestamp = createTimestamp(year, month, day);
+    // @ts-ignore
     return disabled.map((d) => new Date(d).getTime()).includes(selectedDateTimestamp);
   };
 
@@ -585,7 +624,7 @@
    * Checks if a given day is the last day of the month.
    *
    * @param {number} day - The day of the month.
-   * @param {Array} calendar - The calendar array.
+   * @param {Array<number>} calendar - The calendar array.
    * @returns {boolean} - True if it's the last day of the month, false otherwise.
    */
   const isLastDayOfMonth = (day, calendar) => {
@@ -606,6 +645,7 @@
       return;
     }
 
+    // @ts-ignore
     const { className: classes } = e.target || {};
 
     if (classes.includes('future') || classes.includes('past') || classes.includes('disabled')) {
@@ -637,7 +677,7 @@
    */
   const inRangeHover = (day, month, year) => {
     if (!isRange || endDate || !startDate || !tempEndDate) {
-      return;
+      return false;
     }
 
     const dateString = createTimestamp(year, month, day);
@@ -681,7 +721,9 @@
 
     const [hours, minutes] = (which === 'start' ? startDateTime : endDateTime).split(':');
 
+    // @ts-ignore
     date.setHours(hours);
+    // @ts-ignore
     date.setMinutes(minutes);
 
     return date.getTime();
@@ -704,10 +746,12 @@
     let minutes = date.getMinutes();
 
     if (hours < 10) {
+      // @ts-ignore
       hours = `0${hours}`;
     }
 
     if (minutes < 10) {
+      // @ts-ignore
       minutes = `0${minutes}`;
     }
 
@@ -722,15 +766,20 @@
   $: todayMonth = today && today.getMonth();
   $: todayDay = today && today.getDate();
   $: todayYear = today && today.getFullYear();
+  // @ts-ignore
   $: prev = calendarize(new Date(startDateYear, startDateMonth - 1), startOfWeek);
   $: startDateCalendar = calendarize(new Date(startDateYear, startDateMonth), startOfWeek);
+  // @ts-ignore
   $: next = calendarize(new Date(startDateYear, startDateMonth + 1), startOfWeek);
   $: endDateMonth = startDateMonth === 11 ? 0 : startDateMonth + 1;
   $: endDateYear = endDateMonth === 0 ? startDateYear + 1 : startDateYear;
+  // @ts-ignore
   $: endDateCalendar = calendarize(new Date(endDateYear, endDateMonth), startOfWeek);
   $: !isRange && (endDate = null);
   $: theme !== null && document.documentElement.setAttribute('data-picker-theme', theme);
+  // @ts-ignore
   $: disabled = disabledDates.reduce((acc, date) => {
+    // @ts-ignore
     let newDates = [];
     if (date instanceof Date) {
       newDates = [date.getTime()];
@@ -740,12 +789,14 @@
       let dateRangeEnd = new Date(rangeEnd).getTime();
 
       for (; dateRangeStart <= dateRangeEnd; dateRangeStart += MILLISECONDS_IN_DAY) {
+        // @ts-ignore
         newDates = [...newDates, dateRangeStart];
       }
     } else {
       newDates = [new Date(date).getTime()];
     }
 
+    // @ts-ignore
     return [...acc, ...newDates];
   }, []);
 
@@ -850,8 +901,7 @@
                   class:end={isLastInRange(
                     startDateCalendar[weekIndex][dayIndex],
                     startDateMonth,
-                    startDateYear,
-                    startDateCalendar
+                    startDateYear
                   )}
                   class:range={inRange(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:rangehover={inRangeHover(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
@@ -862,8 +912,7 @@
                   class:disabled={isDisabled(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   on:mouseenter={(e) =>
                     onMouseEnter(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
-                  on:mouseleave={(e) =>
-                    onMouseLeave(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
+                  on:mouseleave={onMouseLeave}
                   on:click={(e) => onClick(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:norange={isRange && tempEndDate === startDate}
                 >
@@ -927,8 +976,7 @@
                     class:end={isLastInRange(
                       endDateCalendar[weekIndex][dayIndex],
                       endDateMonth,
-                      endDateYear,
-                      endDateCalendar
+                      endDateYear
                     )}
                     class:past={isPastDate(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:future={isFutureDate(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
@@ -937,8 +985,7 @@
                     class:disabled={isDisabled(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     on:mouseenter={(e) =>
                       onMouseEnter(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
-                    on:mouseleave={(e) =>
-                      onMouseLeave(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
+                    on:mouseleave={onMouseLeave}
                     on:click={(e) => onClick(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:norange={isRange && tempEndDate === startDate}
                   >

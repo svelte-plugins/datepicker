@@ -20,8 +20,6 @@
 # generated
 .vercel
 /node_modules
-/lib
-/dist
 
 # testing
 coverage

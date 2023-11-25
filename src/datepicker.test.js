@@ -8,9 +8,6 @@ const config = {
   endDate: today,
   startDateTime: '00:00',
   endDateTime: '00:00',
-  today,
-  defaultYear: today.getFullYear(),
-  defaultMonth: today.getMonth(),
   startOfWeek: 0,
   isMultipane: false,
   isRange: false,
@@ -18,7 +15,7 @@ const config = {
   align: 'left',
   theme: '',
   disabledDates: [],
-  onDayClick: () => { },
+  onDayClick: () => {},
   showYearControls: true,
   showPresets: false,
   showTimePicker: false,
@@ -46,8 +43,7 @@ describe('Components: DatePicker', () => {
   let TestHarness;
 
   beforeEach(() => {
-    TestHarness = (props = {}) =>
-      render(DatePicker, props);
+    TestHarness = (props = {}) => render(DatePicker, props);
   });
 
   it('should render the component', () => {
