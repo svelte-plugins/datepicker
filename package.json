@@ -58,5 +58,14 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.2",
     "vitest": "^0.34.6"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "svelte": "./src/index.js",
+      "require": "./dist/index.js",
+      "module": "./dist/index.mjs",
+      "default": "./src/index.js"
+    }
   }
 }

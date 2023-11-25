@@ -21,6 +21,7 @@
 # generated
 .vercel
 /node_modules
+/dist
 
 # testing
 coverage

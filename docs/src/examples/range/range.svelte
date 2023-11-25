@@ -63,7 +63,6 @@
 </div>
 
 <Prism showLineNumbers={true} code={`
-
 <script>
   import { DatePicker } from '@svelte-plugins/datepicker';
   import { format } from 'date-fns';
@@ -76,7 +75,7 @@
     return Date.now() - days * MILLISECONDS_IN_DAY;
   };
 
-  let startDate = getDateFromToday(${days});
+  let startDate = getDateFromToday(29);
   let endDate = today;
   let dateFormat = 'MMM d, yyyy';
   let isOpen = false;
