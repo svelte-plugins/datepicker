@@ -1,35 +1,35 @@
-main.svelte-7xhgr9.svelte-7xhgr9 {
+main.svelte-1sxy6bq.svelte-1sxy6bq {
   padding: 60px
 }
 
-.sample.svelte-7xhgr9.svelte-7xhgr9 {
+.sample.svelte-1sxy6bq.svelte-1sxy6bq {
   height: 400px;
   margin: 48px 0;
   position: relative
 }
 
-code.svelte-7xhgr9.svelte-7xhgr9 {
+code.svelte-1sxy6bq.svelte-1sxy6bq {
   background-color: #f0f0f0;
   border-radius: 3px;
   padding: 4px
 }
 
-h1.svelte-7xhgr9.svelte-7xhgr9 {
+h1.svelte-1sxy6bq.svelte-1sxy6bq {
   margin: 0;
   padding: 0
 }
 
-hr.svelte-7xhgr9.svelte-7xhgr9 {
+hr.svelte-1sxy6bq.svelte-1sxy6bq {
   border: 0;
   border-bottom: 1px solid #ddd;
   height: 1px
 }
 
-h1.svelte-7xhgr9.svelte-7xhgr9 {
+h1.svelte-1sxy6bq.svelte-1sxy6bq {
   display: inline-block
 }
 
-.example.svelte-7xhgr9.svelte-7xhgr9 {
+.example.svelte-1sxy6bq.svelte-1sxy6bq {
   background-color: #fafafa;
   border-radius: 8px;
   padding: 16px 16px 10px;
@@ -40,37 +40,37 @@ h1.svelte-7xhgr9.svelte-7xhgr9 {
   margin-top: 16px !important
 }
 
-ul.clean.svelte-7xhgr9.svelte-7xhgr9 {
+ul.clean.svelte-1sxy6bq.svelte-1sxy6bq {
   list-style: none;
   margin: 0;
   padding: 0
 }
 
-table.svelte-7xhgr9.svelte-7xhgr9 {
+table.svelte-1sxy6bq.svelte-1sxy6bq {
   border-collapse: collapse;
   max-width: 1084px;
   width: 100%
 }
 
-table.svelte-7xhgr9 tr th.svelte-7xhgr9,
-table.svelte-7xhgr9 tr td.svelte-7xhgr9 {
+table.svelte-1sxy6bq tr th.svelte-1sxy6bq,
+table.svelte-1sxy6bq tr td.svelte-1sxy6bq {
   padding: 16px 24px;
   text-align: left
 }
 
-table.svelte-7xhgr9 tr td.svelte-7xhgr9:first-child {
+table.svelte-1sxy6bq tr td.svelte-1sxy6bq:first-child {
   font-weight: 600
 }
 
-table.svelte-7xhgr9 tr td small.svelte-7xhgr9 {
+table.svelte-1sxy6bq tr td small.svelte-1sxy6bq {
   color: #5d656f
 }
 
-table.svelte-7xhgr9 tr td code.svelte-7xhgr9 {
+table.svelte-1sxy6bq tr td code.svelte-1sxy6bq {
   font-size: 12px
 }
 
-table.svelte-7xhgr9 tr th.svelte-7xhgr9 {
+table.svelte-1sxy6bq tr th.svelte-1sxy6bq {
   background-color: #fafafa;
   border-bottom: 1px solid #e8e9ea;
   color: #21333d;
@@ -78,22 +78,15 @@ table.svelte-7xhgr9 tr th.svelte-7xhgr9 {
   font-weight: 600
 }
 
-table.svelte-7xhgr9 tr td.svelte-7xhgr9 {
+table.svelte-1sxy6bq tr td.svelte-1sxy6bq {
   border-bottom: 1px solid #eceff1;
   color: #454f5a;
   font-size: 14px
 }
 
 @media only screen and (max-width: 800px) {
-  .sample.svelte-7xhgr9.svelte-7xhgr9 {
-    height: 600px;
-    margin: 48px auto
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .sample.svelte-7xhgr9.svelte-7xhgr9 {
-    height: 400px;
+  .sample.svelte-1sxy6bq.svelte-1sxy6bq {
+    height: 660px;
     margin: 48px auto
   }
 }
@@ -416,10 +409,10 @@ pre[class*=language-] {
 
 :root {
   --datepicker-border-color: #e8e9ea;
-  --datepicker-border-radius-small: .125rem;
-  --datepicker-border-radius-base: .25rem;
-  --datepicker-border-radius-large: .5rem;
-  --datepicker-border-radius-xlarge: .75rem;
+  --datepicker-border-radius-small: 0.125rem;
+  --datepicker-border-radius-base: 0.25rem;
+  --datepicker-border-radius-large: 0.5rem;
+  --datepicker-border-radius-xlarge: 0.75rem;
   --datepicker-border-radius-xxlarge: 1rem;
   --datepicker-border-radius-xxxlarge: 1.125rem;
   --datepicker-state-active: #0087ff;
@@ -640,16 +633,16 @@ pre[class*=language-] {
   --datepicker-calendar-range-included-height: var(--datepicker-calendar-day-height)
 }
 
-.datepicker.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   font-size: var(--datepicker-font-size-base);
   position: relative
 }
 
-.datepicker.svelte-1l0rbmb .svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   box-sizing: border-box
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-container-background);
   border: 1px solid var(--datepicker-container-border);
   border-radius: var(--datepicker-container-border-radius);
@@ -663,40 +656,40 @@ pre[class*=language-] {
   z-index: var(--datepicker-container-zindex)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container.right.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container.right.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   left: auto;
   right: 0
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container.show.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container.show.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   display: grid;
   top: 105%
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container.range.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container.range.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   grid-template-columns: repeat(2, 1fr)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container.presets.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container.presets.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   grid-template-columns: minmax(var(--datepicker-presets-minwidth), var(--datepicker-presets-maxwidth)) 1fr 1fr
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container.presets.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:not(.range) {
+.datepicker.svelte-1nmg4fl .calendars-container.presets.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:not(.range) {
   grid-template-columns: minmax(var(--datepicker-presets-minwidth), var(--datepicker-presets-maxwidth)) 1fr
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container.presets .calendar-presets.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container.presets .calendar-presets.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   display: flex
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar-presets.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar-presets.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border-right: var(--datepicker-presets-border);
   display: none;
   flex-direction: column;
   padding: var(--datepicker-presets-padding)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar-presets button.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar-presets button.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -713,36 +706,36 @@ pre[class*=language-] {
   text-align: var(--datepicker-presets-button-text-align)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar-presets button.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:hover {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar-presets button.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:hover {
   background-color: var(--datepicker-presets-button-background-hover);
   color: var(--datepicker-presets-button-color-hover)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar-presets button.active.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar-presets button.active.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background-color: var(--datepicker-presets-button-background-active);
   color: var(--datepicker-presets-button-color-active);
   cursor: var(--datepicker-presets-button-cursor-active);
   font-weight: var(--datepicker-presets-button-font-weight-active)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar-presets button.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:focus-visible {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar-presets button.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:focus-visible {
   border-radius: var(--datepicker-presets-button-border-radius-active);
   outline: var(--datepicker-presets-button-outline-focus);
   z-index: var(--datepicker-presets-button-zindex-focus)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border: var(--datepicker-calendar-border);
   padding: var(--datepicker-calendar-padding);
   position: var(--datepicker-calendar-position);
   width: var(--datepicker-calendar-width)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar.svelte-1l0rbmb+.calendar.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar.svelte-1nmg4fl+.calendar.svelte-1nmg4fl.svelte-1nmg4fl {
   border-left: var(--datepicker-calendar-split-border)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   align-items: var(--datepicker-calendar-header-align-items);
   color: var(--datepicker-calendar-header-color);
   display: var(--datepicker-calendar-header-display);
@@ -755,7 +748,7 @@ pre[class*=language-] {
   user-select: var(--datepicker-calendar-header-user-select)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header button.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header button.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -772,7 +765,7 @@ pre[class*=language-] {
   width: var(--datepicker-calendar-header-month-nav-width)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header.svelte-1l0rbmb>span.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header.svelte-1nmg4fl>span.svelte-1nmg4fl.svelte-1nmg4fl {
   align-items: var(--datepicker-calendar-header-text-align-items);
   color: var(--datepicker-calendar-header-text-color);
   display: var(--datepicker-calendar-header-text-display);
@@ -781,19 +774,19 @@ pre[class*=language-] {
   gap: var(--datepicker-calendar-header-text-gap)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header.svelte-1l0rbmb>span.svelte-1l0rbmb+button.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header.svelte-1nmg4fl>span.svelte-1nmg4fl+button.svelte-1nmg4fl {
   margin-left: 0;
   margin-right: -8px
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header>span .years.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header>span .years.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   align-items: var(--datepicker-calendar-header-year-align-items);
   display: var(--datepicker-calendar-header-year-display);
   flex-direction: var(--datepicker-calendar-header-year-flex-direction);
   margin: var(--datepicker-calendar-header-year-margin)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header>span .years button.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header>span .years button.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   display: var(--datepicker-calendar-header-year-nav-display);
   color: var(--datepicker-calendar-header-year-nav-color);
   height: var(--datepicker-calendar-header-year-nav-height);
@@ -803,30 +796,30 @@ pre[class*=language-] {
   width: var(--datepicker-calendar-header-year-nav-width)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header>span .years button i.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header>span .years button i.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   font-size: var(--datepicker-calendar-header-year-nav-icon-font-size)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header button.hide.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header button.hide.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   opacity: 0
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header button.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:hover {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header button.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:hover {
   background: var(--datepicker-calendar-header-month-nav-background-hover)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header.timepicker.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header.timepicker.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   margin-bottom: 0
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .timepicker.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .timepicker.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   align-items: var(--datepicker-timepicker-container-align-items);
   display: var(--datepicker-timepicker-container-display);
   justify-content: var(--datepicker-timepicker-container-justify-content);
   margin-bottom: var(--datepicker-timepicker-container-margin-bottom)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .timepicker input[type=time].svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .timepicker input[type=time].svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border: var(--datepicker-timepicker-input-border);
   border-radius: var(--datepicker-timepicker-input-border-radius);
   display: var(--datepicker-timepicker-input-display);
@@ -835,29 +828,29 @@ pre[class*=language-] {
   padding: var(--datepicker-timepicker-input-padding)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .timepicker input[type=time].end-time.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .timepicker input[type=time].end-time.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   display: none
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .timepicker.show input[type=time].end-time.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .timepicker.show input[type=time].end-time.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   display: block
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar header button.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:focus-visible,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:focus-visible {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar header button.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:focus-visible,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:focus-visible {
   border-radius: 20px;
   outline: 5px auto -webkit-focus-ring-color;
   z-index: 10
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .month.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .month.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   display: var(--datepicker-calendar-container-display);
   grid-template-columns: var(--datepicker-calendar-container-grid-template-columns);
   grid-gap: var(--datepicker-calendar-container-grid-gap);
   width: var(--datepicker-calendar-container-display)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .dow.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .dow.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   color: var(--datepicker-calendar-dow-color);
   font-size: var(--datepicker-calendar-dow-font-size);
   font-weight: var(--datepicker-calendar-dow-font-weight);
@@ -865,7 +858,7 @@ pre[class*=language-] {
   text-align: var(--datepicker-calendar-dow-text-align)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   -webkit-appearance: var(--datepicker-calendar-day-container-appearance);
   -moz-appearance: var(--datepicker-calendar-day-container-appearance);
   appearance: var(--datepicker-calendar-day-container-appearance);
@@ -877,7 +870,7 @@ pre[class*=language-] {
   text-align: var(--datepicker-calendar-day-container-text-align)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   align-items: var(--datepicker-calendar-day-align-items);
   border: var(--datepicker-calendar-day-border);
   border-radius: var(--datepicker-calendar-day-border-radius);
@@ -894,31 +887,31 @@ pre[class*=language-] {
   width: var(--datepicker-calendar-day-width)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date:not(.other):not(.range):not(.future):not(.past):not(.disabled) span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:hover {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date:not(.other):not(.range):not(.future):not(.past):not(.disabled) span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:hover {
   background-color: var(--datepicker-calendar-day-background-hover);
   color: var(--datepicker-calendar-day-color-hover)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:focus {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:focus {
   z-index: var(--datepicker-calendar-day-zindex-focus)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.disabled span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.past span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.future span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.disabled span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.past span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.future span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   color: var(--datepicker-calendar-day-color-disabled);
   cursor: var(--datepicker-calendar-day-cursor-disabled)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.today span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.today span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-calendar-today-background);
   border: var(--datepicker-calendar-today-border);
   cursor: var(--datepicker-calendar-today-cursor);
   font-weight: var(--datepicker-calendar-today-font-weight)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-calendar-range-background);
   border: var(--datepicker-calendar-range-border);
   border-radius: var(--datepicker-calendar-range-border-radius);
@@ -927,120 +920,120 @@ pre[class*=language-] {
   font-weight: var(--datepicker-calendar-range-font-weight)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.start.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.start.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.start.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.start.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   box-shadow: var(--datepicker-calendar-range-start-box-shadow);
   height: var(--datepicker-calendar-day-height)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.end.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.end.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.end.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.end.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   box-shadow: var(--datepicker-calendar-range-end-box-shadow);
   height: var(--datepicker-calendar-day-height)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.start span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.start span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.end span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.end span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.start span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.start span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.end span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.end span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background-color: var(--datepicker-calendar-range-selected-background);
   border-radius: var(--datepicker-calendar-range-selected-border-radius);
   color: var(--datepicker-calendar-range-selected-color);
   font-weight: var(--datepicker-calendar-range-selected-font-weight)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.first span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.first span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover:nth-last-child(7n):not(.start):not(.end) span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range:nth-last-child(7n):not(.start):not(.end) span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.first span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.first span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover:nth-last-child(7n):not(.start):not(.end) span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range:nth-last-child(7n):not(.start):not(.end) span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.last span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.last span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover:nth-child(7n):not(.start):not(.end) span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range:nth-child(7n):not(.start):not(.end) span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.last span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.last span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover:nth-child(7n):not(.start):not(.end) span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range:nth-child(7n):not(.start):not(.end) span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.disabled span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.disabled span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.disabled span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.disabled span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-calendar-range-background-disabled);
   color: var(--datepicker-calendar-range-color-disabled)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.start.end.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.range.start.end.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.start.end.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.range.start.end.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   box-shadow: none
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.svelte-1l0rbmb:not(.rangehover)+.rangehover.svelte-1l0rbmb.svelte-1l0rbmb:not(.end),
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.svelte-1l0rbmb:not(.rangehover)+.rangehover.start.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.svelte-1nmg4fl:not(.rangehover)+.rangehover.svelte-1nmg4fl.svelte-1nmg4fl:not(.end),
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.svelte-1nmg4fl:not(.rangehover)+.rangehover.start.svelte-1nmg4fl.svelte-1nmg4fl {
   box-shadow: var(--datepicker-calendar-range-start-box-shadow-selected) !important;
   height: var(--datepicker-calendar-day-height)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date:not(.rangehover)+.rangehover span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date:not(.rangehover)+.rangehover.start span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date:not(.rangehover)+.rangehover span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date:not(.rangehover)+.rangehover.start span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border-radius: var(--datepicker-calendar-range-selected-start-border-radius)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background-color: var(--datepicker-calendar-range-included-background);
   color: var(--datepicker-calendar-range-included-color);
   font-weight: var(--datepicker-calendar-range-included-font-weight)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:hover {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:hover {
   box-shadow: var(--datepicker-calendar-range-included-box-shadow);
   height: var(--datepicker-calendar-range-included-height)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover:hover span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover:hover span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border-radius: 20px;
   font-weight: var(--datepicker-font-weight-medium)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.first.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb:hover,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.start.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.first.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl:hover,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.start.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   box-shadow: var(--datepicker-calendar-range-start-box-shadow-selected);
   height: var(--datepicker-calendar-day-height)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.svelte-1l0rbmb:not(.start)+.start.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.end.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.svelte-1nmg4fl:not(.start)+.start.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.end.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   box-shadow: var(--datepicker-calendar-range-end-box-shadow-selected);
   height: var(--datepicker-calendar-day-height)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover:not(.start)+.start span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover:not(.start)+.start span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border-radius: 20px
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.start span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb,
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.end span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.start span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl,
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.end span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background-color: var(--datepicker-calendar-range-start-end-background);
   color: var(--datepicker-calendar-range-start-end-color)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.start.norange.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.start.norange.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   box-shadow: none !important
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.rangehover.disabled span.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.rangehover.disabled span.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background-color: var(--datepicker-calendar-range-background-disabled);
   color: var(--datepicker-calendar-range-color-disabled)
 }
 
-.datepicker.svelte-1l0rbmb .calendars-container .calendar .date.other.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.datepicker.svelte-1nmg4fl .calendars-container .calendar .date.other.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   border: var(--datepicker-calendar-day-other-border);
   box-shadow: var(--datepicker-calendar-day-other-box-shadow);
   color: var(--datepicker-calendar-day-other-color)
 }
 
-.icon-next-month.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.icon-next-month.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-calendar-header-month-nav-icon-next-background);
   background-size: var(--datepicker-calendar-header-month-nav-icon-next-background-size);
   filter: var(--datepicker-calendar-header-month-nav-icon-next-filter);
@@ -1049,7 +1042,7 @@ pre[class*=language-] {
   width: var(--datepicker-calendar-header-month-nav-icon-next-width)
 }
 
-.icon-previous-month.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.icon-previous-month.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-calendar-header-month-nav-icon-prev-background);
   background-size: var(--datepicker-calendar-header-month-nav-icon-prev-background-size);
   filter: var(--datepicker-calendar-header-month-nav-icon-prev-filter);
@@ -1058,7 +1051,7 @@ pre[class*=language-] {
   width: var(--datepicker-calendar-header-month-nav-icon-prev-width)
 }
 
-.icon-next-year.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.icon-next-year.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-calendar-header-year-nav-icon-next-background);
   background-size: var(--datepicker-calendar-header-year-nav-icon-next-background-size);
   display: var(--datepicker-calendar-header-year-nav-icon-next-display);
@@ -1067,7 +1060,7 @@ pre[class*=language-] {
   width: var(--datepicker-calendar-header-year-nav-icon-next-width)
 }
 
-.icon-previous-year.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+.icon-previous-year.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
   background: var(--datepicker-calendar-header-year-nav-icon-prev-background);
   background-size: var(--datepicker-calendar-header-year-nav-icon-prev-background-size);
   display: var(--datepicker-calendar-header-year-nav-icon-prev-display);
@@ -1077,37 +1070,38 @@ pre[class*=language-] {
 }
 
 @media only screen and (max-width: 800px) {
-  .datepicker.svelte-1l0rbmb .calendars-container.show.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+  .datepicker.svelte-1nmg4fl .calendars-container.show.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
     display: flex;
     flex-direction: column
   }
 
-  .datepicker.svelte-1l0rbmb .calendars-container.presets .calendar-presets.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+  .datepicker.svelte-1nmg4fl .calendars-container.presets .calendar-presets.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
+    border-right: 0;
     border-bottom: var(--datepicker-presets-border)
   }
 
-  .datepicker.svelte-1l0rbmb .calendars-container .calendar .timepicker.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+  .datepicker.svelte-1nmg4fl .calendars-container .calendar .timepicker.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
     align-items: center;
     display: flex
   }
 
-  .datepicker.svelte-1l0rbmb .calendars-container .calendar .timepicker input[type=time].end-time.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+  .datepicker.svelte-1nmg4fl .calendars-container .calendar .timepicker input[type=time].end-time.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
     display: block
   }
 
-  .datepicker.svelte-1l0rbmb .calendars-container .calendar.svelte-1l0rbmb+.calendar.svelte-1l0rbmb.svelte-1l0rbmb {
+  .datepicker.svelte-1nmg4fl .calendars-container .calendar.svelte-1nmg4fl+.calendar.svelte-1nmg4fl.svelte-1nmg4fl {
     display: none
   }
 
-  .datepicker.svelte-1l0rbmb .calendars-container .calendar header button.hide.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
+  .datepicker.svelte-1nmg4fl .calendars-container .calendar header button.hide.svelte-1nmg4fl.svelte-1nmg4fl.svelte-1nmg4fl {
     opacity: 1
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .datepicker.svelte-1l0rbmb .calendars-container.presets .calendar-presets.svelte-1l0rbmb.svelte-1l0rbmb.svelte-1l0rbmb {
-    display: none
-  }
+input[type=text].svelte-udz590 {
+  border: 1px solid #e8e9ea;
+  border-radius: 4px;
+  padding: 8px
 }
 
 .date-field.svelte-ojzubv.svelte-ojzubv {
@@ -1129,12 +1123,6 @@ pre[class*=language-] {
   background-size: 14px 14px;
   height: 14px;
   width: 14px
-}
-
-input[type=text].svelte-udz590 {
-  border: 1px solid #e8e9ea;
-  border-radius: 4px;
-  padding: 8px
 }
 
 .date-field.svelte-fsxva7.svelte-fsxva7 {
