@@ -36,7 +36,7 @@
     "deploy": "npx gh-pages -d docs/build",
     "lint": "eslint --fix \"src/**/*.{.js,svelte}\"",
     "format": "prettier --write \"src/**/*.{js,json,svelte}\"",
-    "test": "vitest --coverage"
+    "test": "vitest --run --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.13.1",

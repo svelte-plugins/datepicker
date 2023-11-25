@@ -8,9 +8,6 @@ const config = {
   endDate: today,
   startDateTime: '00:00',
   endDateTime: '00:00',
-  today,
-  defaultYear: today.getFullYear(),
-  defaultMonth: today.getMonth(),
   startOfWeek: 0,
   isMultipane: false,
   isRange: false,
@@ -50,7 +47,7 @@ describe('Components: DatePicker', () => {
   });
 
   it('should render the component', () => {
-    const { container } = TestHarness();
+    const { container } = TestHarness(config);
     expect(container).toMatchSnapshot();
   });
 });

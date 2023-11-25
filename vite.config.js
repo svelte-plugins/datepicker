@@ -1,8 +1,5 @@
 import { defineConfig } from 'vite';
 import { svelte }  from '@sveltejs/vite-plugin-svelte';
-import packageJson from './package.json';
-
-console.log(packageJson);
 
 export default defineConfig({
   plugins: [
@@ -11,12 +8,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     lib: {
-      entry: packageJson.svelte,
+      entry: './src/index.js',
       name: 'SvelteDatePicker',
       fileName: (format) => format === 'umd' ? 'index.js' : 'index.mjs'
     },
     rollupOptions: {
-      external: ['svelte'], // Add other external dependencies here if needed
+      external: ['svelte'],
       output: {
         globals: {
           svelte: 'svelte',
