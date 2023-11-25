@@ -18,7 +18,7 @@ const config = {
   align: 'left',
   theme: '',
   disabledDates: [],
-  onDayClick: () => { },
+  onDayClick: () => {},
   showYearControls: true,
   showPresets: false,
   showTimePicker: false,
@@ -46,12 +46,11 @@ describe('Components: DatePicker', () => {
   let TestHarness;
 
   beforeEach(() => {
-    TestHarness = (props = {}) =>
-      render(DatePicker, props);
+    TestHarness = (props = {}) => render(DatePicker, props);
   });
 
   it('should render the component', () => {
-    const { container } = TestHarness(config);
+    const { container } = TestHarness();
     expect(container).toMatchSnapshot();
   });
 });
