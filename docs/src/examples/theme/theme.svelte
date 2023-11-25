@@ -5,15 +5,14 @@
 
   export let isMultipane = false;
   export let showPresets = false;
+
   export let days = 29;
 
   const today = new Date();
 
   const MILLISECONDS_IN_DAY = 24 * 60 * 60 * 1000;
 
-  const getDateFromToday = (days) => {
-    return Date.now() - days * MILLISECONDS_IN_DAY;
-  };
+  const getDateFromToday = (days) => (Date.now() - days * MILLISECONDS_IN_DAY);
 
   let startDate = getDateFromToday(days);
   let endDate = today;
@@ -76,7 +75,7 @@
     return Date.now() - days * MILLISECONDS_IN_DAY;
   };
 
-  let startDate = getDateFromToday(${days});
+  let startDate = getDateFromToday(29);
   let endDate = today;
   let dateFormat = 'MMM d, yyyy';
   let isOpen = false;
