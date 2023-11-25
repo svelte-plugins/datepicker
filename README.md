@@ -83,7 +83,7 @@ DatePicker CSS variables:
 
 ```css
   /**
-   * Common
+   * Common Variables
    */
   --datepicker-border-color: #e8e9ea;
 

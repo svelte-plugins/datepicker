@@ -1,0 +1,5 @@
+config
+node_modules
+scripts
+src/**/*.snap.js
+.eslintrc.js

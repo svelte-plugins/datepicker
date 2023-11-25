@@ -9,5 +9,12 @@
   "svelteSortOrder": "options-scripts-markup-styles",
   "svelteStrictMode": false,
   "svelteBracketNewLine": true,
-  "svelteAllowShorthand": true
+  "svelteAllowShorthand": true,
+  "plugins": ["prettier-plugin-svelte"],
+  "overrides": [{
+    "files": "*.svelte",
+    "options": {
+      "parser": "svelte"
+    }
+  }]
 }

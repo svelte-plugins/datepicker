@@ -1,5 +1,9 @@
 export const clickOutside = (node, config = {}) => {
-  const options = { include: [], onClickOutside: () => { }, ...config };
+  const options = {
+    include: [],
+    onClickOutside: () => {},
+    ...config
+  };
 
   const detect = ({ target }) => {
     if (!node.contains(target) || options.include.some((i) => target.isSameNode(i))) {

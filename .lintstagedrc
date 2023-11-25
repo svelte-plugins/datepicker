@@ -1,3 +1,6 @@
 {
-  "./src/**/*.{test.js,js,svelte}": ["eslint -c ./.eslintrc.js --fix", "prettier --write"]
+  "./src/**/*.{test.js,js,json,svelte}": [
+    "eslint -c ./.eslintrc.json --fix",
+    "prettier --write"
+  ]
 }
