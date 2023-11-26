@@ -51,6 +51,7 @@
     "eslint-plugin-svelte": "^2.35.1",
     "eslint-plugin-vitest": "^0.3.10",
     "husky": "^6.0.0",
+    "jsdom": "^23.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^3.1.0",
     "prettier-plugin-svelte": "^3.1.2",
