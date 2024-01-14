@@ -1,7 +1,7 @@
 import type { SvelteComponent } from 'svelte';
 
-export interface ComponentProps {
- /**
+export interface DatePickerProps {
+  /**
    * Represents the start date for a date picker.
    * @default null
    */
@@ -131,8 +131,12 @@ export interface ComponentProps {
   monthLabels: string[];
 }
 
-export default class Component extends SvelteComponent<
-  ComponentProps,
-  Record<string, any>,
-  { default: {} }
-> {}
+export interface DatePickerEvents {
+  [key: string]: any;
+}
+
+export interface DatePickerSlots {
+  default: {};
+}
+
+export default class DatePicker extends SvelteComponent<DatePickerProps, DatePickerEvents, DatePickerSlots> {}
