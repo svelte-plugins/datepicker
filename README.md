@@ -7,11 +7,14 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 ## Install
 
 ```bash
-yarn add -D @svelte-plugins/datepicker
+# npm
+> npm install svelte @svelte-plugins/datepicker
 
-# or with NPM
+# pnpm
+> pnpm install svelte @svelte-plugins/datepicker
 
-npm i -D @svelte-plugins/datepicker
+# yarn
+> yarn add svelte @svelte-plugins/datepicker
 ```
 
 ## Using the DatePicker component

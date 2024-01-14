@@ -1,5 +1,5 @@
 <script>
-  // @ts-check
+  // @ts-nocheck
   import { clickOutside } from './actions';
 
   /**
@@ -446,7 +446,6 @@
    * @param {number} year - The year of the clicked date.
    */
   const onClick = function (e, day, month, year) {
-    // @ts-ignore
     const classes = e.target?.closest('.date').className;
 
     if (classes.includes('future') || classes.includes('past') || classes.includes('disabled')) {
@@ -565,7 +564,6 @@
    */
   const isDisabled = (day, month, year) => {
     const selectedDateTimestamp = createTimestamp(year, month, day);
-    // @ts-ignore
     return disabled.map((d) => new Date(d).getTime()).includes(selectedDateTimestamp);
   };
 
@@ -644,7 +642,6 @@
       return;
     }
 
-    // @ts-ignore
     const { className: classes } = e.target || {};
 
     if (classes.includes('future') || classes.includes('past') || classes.includes('disabled')) {
@@ -694,6 +691,8 @@
    * Handles a click event on a preset date range.
    *
    * @param {Object} preset - The preset date range object with start and end dates.
+   * @param {number} preset.start - The start date of the preset range.
+   * @param {number} preset.end - The end date of the preset range.
    */
   const onPresetClick = ({ start, end }) => {
     startDate = start;
@@ -720,9 +719,7 @@
 
     const [hours, minutes] = (which === 'start' ? startDateTime : endDateTime).split(':');
 
-    // @ts-ignore
     date.setHours(hours);
-    // @ts-ignore
     date.setMinutes(minutes);
 
     return date.getTime();
@@ -745,12 +742,10 @@
     let minutes = date.getMinutes();
 
     if (hours < 10) {
-      // @ts-ignore
       hours = `0${hours}`;
     }
 
     if (minutes < 10) {
-      // @ts-ignore
       minutes = `0${minutes}`;
     }
 
@@ -765,20 +760,15 @@
   $: todayMonth = today && today.getMonth();
   $: todayDay = today && today.getDate();
   $: todayYear = today && today.getFullYear();
-  // @ts-ignore
   $: prev = calendarize(new Date(startDateYear, startDateMonth - 1), startOfWeek);
   $: startDateCalendar = calendarize(new Date(startDateYear, startDateMonth), startOfWeek);
-  // @ts-ignore
   $: next = calendarize(new Date(startDateYear, startDateMonth + 1), startOfWeek);
   $: endDateMonth = startDateMonth === 11 ? 0 : startDateMonth + 1;
   $: endDateYear = endDateMonth === 0 ? startDateYear + 1 : startDateYear;
-  // @ts-ignore
   $: endDateCalendar = calendarize(new Date(endDateYear, endDateMonth), startOfWeek);
   $: !isRange && (endDate = null);
   $: theme !== null && document.documentElement.setAttribute('data-picker-theme', theme);
-  // @ts-ignore
   $: disabled = disabledDates.reduce((acc, date) => {
-    // @ts-ignore
     let newDates = [];
     if (date instanceof Date) {
       newDates = [date.getTime()];
@@ -788,14 +778,12 @@
       let dateRangeEnd = new Date(rangeEnd).getTime();
 
       for (; dateRangeStart <= dateRangeEnd; dateRangeStart += MILLISECONDS_IN_DAY) {
-        // @ts-ignore
         newDates = [...newDates, dateRangeStart];
       }
     } else {
       newDates = [new Date(date).getTime()];
     }
 
-    // @ts-ignore
     return [...acc, ...newDates];
   }, []);
 

@@ -9,4 +9,4 @@ check() {
   echo "$changes" | grep --quiet "$1" && eval "$2"
 }
 
-check package.json "npm install"
+check package.json "pnpm install"
