@@ -39,6 +39,8 @@ const config = {
   ]
 };
 
+vi.setSystemTime(today);
+
 describe('Components: DatePicker', () => {
   let TestHarness;
 

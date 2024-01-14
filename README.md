@@ -7,11 +7,14 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 ## Install
 
 ```bash
-yarn add -D @svelte-plugins/datepicker
+# npm
+> npm install svelte @svelte-plugins/datepicker
 
-# or with NPM
+# pnpm
+> pnpm install svelte @svelte-plugins/datepicker
 
-npm i -D @svelte-plugins/datepicker
+# yarn
+> yarn add svelte @svelte-plugins/datepicker
 ```
 
 ## Using the DatePicker component
@@ -62,6 +65,7 @@ npm i -D @svelte-plugins/datepicker
 | endDateTime	      | The end date time string in 24 hour format.                                           | `string` (default: `00:00`)
 | defaultYear	      |	The year you want to show as the default.	                                            | `number` (default: `2023`)
 | align	            | The edge alignment of the datepicker.                                                 | `string` (default: `left`)
+| disabledDates     | An array of date strings to disable.                                                  | `array` (default: [...])
 | isRange	          |	Changes the date picker into a range picker and allows start and end date selection.  | `boolean` (default: `false`)
 | isMultipane	      |	If true, two calendar months will be shown side-by-side instead of one.               | `boolean` (default: `false`)
 | isOpen            |	If true, the picker will be shown without user interaction.	                          | `boolean` (default: `false`)
