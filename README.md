@@ -65,6 +65,7 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 | endDateTime	      | The end date time string in 24 hour format.                                           | `string` (default: `00:00`)
 | defaultYear	      |	The year you want to show as the default.	                                            | `number` (default: `2023`)
 | align	            | The edge alignment of the datepicker.                                                 | `string` (default: `left`)
+| enabledDates      | An array of date strings to enable only.                                              | `array` (default: [...])
 | disabledDates     | An array of date strings to disable.                                                  | `array` (default: [...])
 | isRange	          |	Changes the date picker into a range picker and allows start and end date selection.  | `boolean` (default: `false`)
 | isMultipane	      |	If true, two calendar months will be shown side-by-side instead of one.               | `boolean` (default: `false`)

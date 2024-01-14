@@ -7,6 +7,7 @@
   export let disabledDates = [];
   export let enableFutureDates = null;
   export let enablePastDates = null;
+  export let enabledDates = [];
 
   let startDate = new Date();
   let dateFormat = 'MM/dd/yy';
@@ -56,7 +57,7 @@
   $: formattedStartDate = formatDate(startDate);
 </script>
 
-<DatePicker bind:isOpen bind:startDate${showTimePicker ? ' showTimePicker' : ''}${disabledDates.length ? ' disabledDates={' + JSON.stringify(disabledDates)+'}': ''}${enableFutureDates !== null && enableFutureDates ? ' enableFutureDates' : ''}${enablePastDates !== null && !enablePastDates ? ' enablePastDates={false}' : ''}>
+<DatePicker bind:isOpen bind:startDate${showTimePicker ? ' showTimePicker' : ''}${enabledDates.length ? ' enabledDates={' + JSON.stringify(enabledDates)+'}': ''}${disabledDates.length ? ' disabledDates={' + JSON.stringify(disabledDates)+'}': ''}${enableFutureDates !== null && enableFutureDates ? ' enableFutureDates' : ''}${enablePastDates !== null && !enablePastDates ? ' enablePastDates={false}' : ''}>
   <input type="text" placeholder="Select date" bind:value={formattedStartDate} on:click={toggleDatePicker} />
 </DatePicker>
 

@@ -76,6 +76,11 @@ export interface DatePickerProps {
   disabledDates: string[];
 
   /**
+   * An array of enabled dates.
+   */
+  enabledDates: string[];
+
+  /**
    * Callback function to handle day click events.
    */
   onDayClick: (event: Object) => void;

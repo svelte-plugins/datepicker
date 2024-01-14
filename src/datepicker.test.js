@@ -15,6 +15,7 @@ const config = {
   align: 'left',
   theme: '',
   disabledDates: [],
+  enabledDates: [],
   onDayClick: () => {},
   showYearControls: true,
   showPresets: false,

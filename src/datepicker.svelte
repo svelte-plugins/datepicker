@@ -87,6 +87,12 @@
   export let disabledDates = [];
 
   /**
+   * An array of enabled dates.
+   * @type {Date[]}
+   */
+  export let enabledDates = [];
+
+  /**
    * Callback function to handle day click events.
    * @type {(event: Object) => void}
    */
@@ -420,7 +426,7 @@
    * @param {string[]} disabled - An array of disabled dates.
    * @returns {string[]} - An array of dates within the specified range.
    */
-  const getDatesInRange = (startDate, endDate, disabled) => {
+  const getDatesInRange = (startDate, endDate) => {
     const dateRangeStart = new Date(startDate);
     const dateRangeEnd = new Date(endDate);
     const datesInRange = [];
@@ -429,7 +435,11 @@
       const formattedDate = `${
         dateRangeStart.getMonth() + 1
       }/${dateRangeStart.getDate()}/${dateRangeStart.getFullYear()}`;
-      if (!disabled.includes(formattedDate)) {
+      if (
+        (!enabled && !disabled) ||
+        (enabled.length && enabled.includes(formattedDate)) ||
+        (disabled.length && !disabled.includes(formattedDate))
+      ) {
         datesInRange.push(formattedDate);
       }
     }
@@ -470,7 +480,7 @@
       ...(isRange && {
         endDate,
         endDateTime,
-        rangeDates: getDatesInRange(startDate, endDate, disabled)
+        rangeDates: getDatesInRange(startDate, endDate)
       })
     };
 
@@ -564,7 +574,11 @@
    */
   const isDisabled = (day, month, year) => {
     const selectedDateTimestamp = createTimestamp(year, month, day);
-    return disabled.map((d) => new Date(d).getTime()).includes(selectedDateTimestamp);
+    return (
+      (!enabled && !disabled) ||
+      (enabled.length && !enabled.map((d) => new Date(d).getTime()).includes(selectedDateTimestamp)) ||
+      (disabled.length && disabled.map((d) => new Date(d).getTime()).includes(selectedDateTimestamp))
+    );
   };
 
   /**
@@ -752,11 +766,40 @@
     return `${hours}:${minutes}`;
   };
 
+  /**
+   * Returns an array of timestamps from an array of date strings.
+   * @param {string[]} collection - An array of date strings.
+   * @returns {number[]} - An array of timestamps.
+   */
+  const getDatesFromArray = (collection) => {
+    return collection.reduce((acc, date) => {
+      let newDates = [];
+
+      if (date instanceof Date) {
+        newDates = [date.getTime()];
+      } else if (typeof date === 'string' && date.includes(':')) {
+        const [rangeStart, rangeEnd] = date.split(':');
+        let dateRangeStart = new Date(rangeStart).getTime();
+        let dateRangeEnd = new Date(rangeEnd).getTime();
+
+        for (; dateRangeStart <= dateRangeEnd; dateRangeStart += MILLISECONDS_IN_DAY) {
+          newDates = [...newDates, dateRangeStart];
+        }
+      } else {
+        newDates = [new Date(date).getTime()];
+      }
+
+      return [...acc, ...newDates];
+    }, []);
+  };
+
   $: startDate = startDate ? getTimestamp(startDate) : null;
   $: endDate = endDate ? getTimestamp(endDate) : null;
+
   $: if (startDate || endDate) {
     updateCalendars();
   }
+
   $: todayMonth = today && today.getMonth();
   $: todayDay = today && today.getDate();
   $: todayYear = today && today.getFullYear();
@@ -768,24 +811,8 @@
   $: endDateCalendar = calendarize(new Date(endDateYear, endDateMonth), startOfWeek);
   $: !isRange && (endDate = null);
   $: theme !== null && document.documentElement.setAttribute('data-picker-theme', theme);
-  $: disabled = disabledDates.reduce((acc, date) => {
-    let newDates = [];
-    if (date instanceof Date) {
-      newDates = [date.getTime()];
-    } else if (typeof date === 'string' && date.includes(':')) {
-      const [rangeStart, rangeEnd] = date.split(':');
-      let dateRangeStart = new Date(rangeStart).getTime();
-      let dateRangeEnd = new Date(rangeEnd).getTime();
-
-      for (; dateRangeStart <= dateRangeEnd; dateRangeStart += MILLISECONDS_IN_DAY) {
-        newDates = [...newDates, dateRangeStart];
-      }
-    } else {
-      newDates = [new Date(date).getTime()];
-    }
-
-    return [...acc, ...newDates];
-  }, []);
+  $: disabled = getDatesFromArray(disabledDates);
+  $: enabled = getDatesFromArray(enabledDates);
 
   $: if (!startDate && !endDate) {
     startDateYear = Number(defaultYear);
