@@ -5,135 +5,135 @@ export interface DatePickerProps {
    * Represents the start date for a date picker.
    * @default null
    */
-  startDate: any;
+  startDate?: any;
 
   /**
    * Represents the end date for a date picker.
    * @default null
    */
-  endDate: any;
+  endDate?: any;
 
   /**
    * Represents the start time for the date picker (in HH:mm format).
    * @default '00:00'
    */
-  startDateTime: string;
+  startDateTime?: string;
 
   /**
    * Represents the end time for the date picker (in HH:mm format).
    * @default '00:00'
    */
-  endDateTime: string;
+  endDateTime?: string;
 
   /**
    * Represents the current date.
    */
-  today: Date;
+  today?: Date;
 
   /**
    * Represents the default year for the date picker.
    */
-  defaultYear: number;
+  defaultYear?: number;
 
   /**
    * Represents the default month for the date picker.
    */
-  defaultMonth: number;
+  defaultMonth?: number;
 
   /**
    * Represents the start day of the week (0 for Sunday, 1 for Monday, etc.).
    */
-  startOfWeek: number;
+  startOfWeek?: number;
 
   /**
    * Indicates whether the date picker has multiple panes.
    */
-  isMultipane: boolean;
+  isMultipane?: boolean;
 
   /**
    * Indicates whether the date picker is in range mode.
    */
-  isRange: boolean;
+  isRange?: boolean;
 
   /**
    * Indicates whether the date picker is open.
    */
-  isOpen: boolean;
+  isOpen?: boolean;
 
   /**
    * Specifies the alignment of the date picker (e.g., 'left', 'center', 'right').
    */
-  align: string;
+  align?: string;
 
   /**
    * Represents the theme of the date picker.
    */
-  theme: string;
+  theme?: string;
 
   /**
    * An array of disabled dates.
    */
-  disabledDates: string[];
+  disabledDates?: string[];
 
   /**
    * An array of enabled dates.
    */
-  enabledDates: string[];
+  enabledDates?: string[];
 
   /**
    * Callback function to handle day click events.
    */
-  onDayClick: (event: Object) => void;
+  onDayClick?: (event: Object) => void;
 
   /**
    * Indicates whether the date picker should always be shown.
    */
-  alwaysShow: boolean;
+  alwaysShow?: boolean;
 
   /**
    * Indicates whether year controls are displayed in the date picker.
    */
-  showYearControls: boolean;
+  showYearControls?: boolean;
 
   /**
    * Indicates whether preset options are displayed in the date picker.
    */
-  showPresets: boolean;
+  showPresets?: boolean;
 
   /**
    * Indicates whether the time picker is shown in the date picker.
    */
-  showTimePicker: boolean;
+  showTimePicker?: boolean;
 
   /**
    * Indicates whether future dates are enabled.
    */
-  enableFutureDates: boolean;
+  enableFutureDates?: boolean;
 
   /**
    * Indicates whether past dates are enabled.
    */
-  enablePastDates: boolean;
+  enablePastDates?: boolean;
 
   /**
    * An array of preset date range labels.
    */
-  presetLabels: string[];
+  presetLabels?: string[];
 
   /**
    * An array of preset date ranges with labels and start/end timestamps.
    */
-  presetRanges: Object[];
+  presetRanges?: Object[];
 
   /**
    * An array of day-of-week labels.
    */
-  dowLabels: string[];
+  dowLabels?: string[];
 
   /**
    * An array of month labels.
    */
-  monthLabels: string[];
+  monthLabels?: string[];
 }
 
 export interface DatePickerEvents {
