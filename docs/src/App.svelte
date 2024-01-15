@@ -189,6 +189,23 @@
         <td valign="top"><code>[]</code></td>
       </tr>
       <tr>
+        <td valign="top">enabledDates</td>
+        <td valign="top"><code>array</code></td>
+        <td>
+          Determines which dates will be enabled only.
+          <div><small>Accepted format <b>'MM/DD/YYYY'</b></small></div>
+
+          <br/>
+
+          <ul class="clean">
+            <li><code>['1/1/2023']</code> - Enables January 1st, 2023</li>
+            <li><code>['1/1/2023', '1/2/2023']</code> - Enables January 1st and 2nd, 2023</li>
+            <li><code>['1/1/2023:1/10/2023']</code> - Enables the range January 1st to 10th, 2023</li>
+          </ul>
+        </td>
+        <td valign="top"><code>[]</code></td>
+      </tr>
+      <tr>
         <td valign="top">dowLabels</td>
         <td valign="top"><code>array</code></td>
         <td valign="top">An array of strings containing the days of the week.</td>
@@ -305,10 +322,16 @@
       <SinglePicker enableFutureDates />
     </div>
 
-    <h3>Disable Dates</h3>
+    <h3>Disabled Dates</h3>
 
     <div class="example">
       <SinglePicker enableFutureDates disabledDates={['11/25/23:11/29/23', '12/10/23', '12/14/23:12/31/23', '1/7/24:1/14/24']} />
+    </div>
+
+    <h3>Enabled Dates</h3>
+
+    <div class="example">
+      <SinglePicker enableFutureDates enabledDates={['1/14/24:1/25/24']} />
     </div>
 
     <h3>Theme</h3>
