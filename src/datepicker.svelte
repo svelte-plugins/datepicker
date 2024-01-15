@@ -99,6 +99,12 @@
   export let onDayClick = () => {};
 
   /**
+   * Callback function to handle previous or next click events.
+   * @type {(event: Object) => void}
+   */
+   export let onDateSelected = () => {};
+
+  /**
    * Indicates whether the date picker should always be shown.
    * @type {boolean}
    */
@@ -334,6 +340,26 @@
     endDateCalendar = endDateCalendar;
   };
 
+  const selectDate = (action, actionPressed) => {
+    const initialPeriod = new Date(defaultYear, defaultMonth);
+    const selectedPeriod = new Date(startDateYear, startDateMonth);
+    const month = (startDateMonth + 1);
+
+    const initialDayOffMonth = '01';
+    const lastWeekOfMonth = startDateCalendar[startDateCalendar.length - 1].filter((d) => d !== 0);
+    const lastDayOfMonth = lastWeekOfMonth[lastWeekOfMonth.length - 1];
+
+    onDateSelected({
+      action,
+      actionPressed,
+      selectedPeriod: {
+        start: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${initialDayOffMonth}`,
+        end: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${lastDayOfMonth}`
+      },
+      isPastePeriod: selectedPeriod < initialPeriod
+    })
+  }
+
   /**
    * Handles the "to previous month" action in the date picker.
    */
@@ -344,6 +370,8 @@
       startDateMonth = 11;
       startDateYear--;
     }
+
+    selectDate('previous', 'month');
   };
 
   /**
@@ -351,6 +379,7 @@
    */
   const toPrevYear = () => {
     startDateYear--;
+    selectDate('previous', 'year');
   };
 
   /**
@@ -363,6 +392,7 @@
       startDateMonth = 0;
       startDateYear++;
     }
+    selectDate('next', 'month');
   };
 
   /**
@@ -370,6 +400,7 @@
    */
   const toNextYear = () => {
     startDateYear++;
+    selectDate('next', 'year');
   };
 
   /**

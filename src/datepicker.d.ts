@@ -86,6 +86,11 @@ export interface DatePickerProps {
   onDayClick?: (event: Object) => void;
 
   /**
+   * Callback function to handle previous or next click events.
+   */
+  onDateSelected?: (event: Object) => void;
+
+  /**
    * Indicates whether the date picker should always be shown.
    */
   alwaysShow?: boolean;
