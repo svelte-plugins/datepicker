@@ -49,8 +49,56 @@ describe('Components: DatePicker', () => {
     TestHarness = (props = {}) => render(DatePicker, props);
   });
 
-  it('should render the component', () => {
+  it('should render a single datepicker', () => {
     const { container } = TestHarness(config);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render a range picker', () => {
+    const { container } = TestHarness({ ...config, isRange: true, isMultipane: true });
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render a date picker with time selection', () => {
+    const { container } = TestHarness({ ...config, showTimePicker: true });
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render a range picker with presets', () => {
+    const { container } = TestHarness({ ...config, isRange: true, showPresets: true });
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render a date picker without year controls', () => {
+    const { container } = TestHarness({ ...config, showYearControls: false });
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render a date picker with Monday as start of week', () => {
+    const { container } = TestHarness({ ...config, startOfWeek: 1 });
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render a date picker with my custom locale', () => {
+    const { container } = TestHarness({
+      ...config,
+      dowLabels: ['Au', 'Bo', 'Cu', 'De', 'Eh', 'Fr', 'Ga'],
+      monthLabels: [
+        'Qanuary',
+        'Webruary',
+        'Earch',
+        'Rpril',
+        'Tay',
+        'Yune',
+        'Uuly',
+        'Iugust',
+        'Oeptember',
+        'Pctober',
+        'Aovember',
+        'Secember'
+      ]
+    });
+
     expect(container).toMatchSnapshot();
   });
 });
