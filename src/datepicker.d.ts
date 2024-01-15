@@ -141,7 +141,7 @@ export interface DatePickerEvents {
 }
 
 export interface DatePickerSlots {
-  default: {};
+  default?: {};
 }
 
 export default class DatePicker extends SvelteComponent<DatePickerProps, DatePickerEvents, DatePickerSlots> {}

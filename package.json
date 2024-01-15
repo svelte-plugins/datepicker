@@ -1,7 +1,7 @@
 {
   "name": "@svelte-plugins/datepicker",
   "description": "A simple datepicker component designed for Svelte.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Kieran Boyle (https://github.com/dysfunc)",
   "homepage": "https://github.com/svelte-plugins/datepicker",
@@ -37,8 +37,9 @@
   "scripts": {
     "start": "vite & npm --prefix ./docs install && npm --prefix ./docs run dev",
     "build": "svelte-package --input ./src && pnpm lint:package",
+    "build:docs": "npm --prefix ./docs run build",
+    "deploy": "pnpm build:docs && npx gh-pages -d docs/build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "deploy": "npx gh-pages -d docs/build",
     "lint": "eslint -c ./.eslintrc.json --fix \"src/**/*.{test.js,js,ts,json,svelte}\"",
     "lint:package": "publint --strict",
     "format": "prettier --write \"src/**/*.{test.js,js,ts,json,svelte}\"",
