@@ -99,10 +99,10 @@
   export let onDayClick = () => {};
 
   /**
-   * Callback function to handle previous or next click events.
+   * Callback function to handle the navigation click event for months and years
    * @type {(event: Object) => void}
    */
-   export let onDateSelected = () => {};
+   export let onNavigationChange = () => {};
 
   /**
    * Indicates whether the date picker should always be shown.
