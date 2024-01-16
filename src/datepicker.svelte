@@ -410,7 +410,7 @@
       startDateMonth = 0;
       startDateYear++;
     }
-    selectDate('next', 'month');
+    onNavigation('next', 'month');
   };
 
   /**
