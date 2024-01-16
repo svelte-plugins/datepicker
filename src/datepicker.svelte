@@ -389,7 +389,7 @@
       startDateYear--;
     }
 
-    selectDate('previous', 'month');
+    onNavigation('previous', 'month');
   };
 
   /**
