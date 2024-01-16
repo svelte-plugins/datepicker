@@ -16,7 +16,7 @@ export const defaultConfig = {
   theme: '',
   disabledDates: [],
   onDayClick: () => { },
-  onDateChange: () => { },
+  onNavigationChange: () => { },
   showYearControls: true,
   showPresets: false,
   showTimePicker: false,
