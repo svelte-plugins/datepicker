@@ -352,7 +352,6 @@
     const initialDayOffMonth = '01';
 
     let current = new Date(startDateYear, startDateMonth);
-    let year = isMultipane ? endDateYear : startDateYear;
     let month = startDateMonth + 1;
 
     const calendar = isMultipane ? endDateCalendar : startDateCalendar;
