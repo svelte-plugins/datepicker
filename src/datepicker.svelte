@@ -340,24 +340,42 @@
     endDateCalendar = endDateCalendar;
   };
 
-  const selectDate = (action, actionPressed) => {
-    const initialPeriod = new Date(defaultYear, defaultMonth);
-    const selectedPeriod = new Date(startDateYear, startDateMonth);
-    const month = (startDateMonth + 1);
+  /**
+   * Handles the navigation click event for months and years
+   * @param {string} direction - The direction of the navigation (previous or next).
+   * @param {string} type - The type of navigation (month or year).
+   */
+  const onNavigation = async (direction, type) => {
+    await tick();
 
+    const initial = new Date(defaultYear, defaultMonth);
     const initialDayOffMonth = '01';
-    const lastWeekOfMonth = startDateCalendar[startDateCalendar.length - 1].filter((d) => d !== 0);
+
+    let current = new Date(startDateYear, startDateMonth);
+    let year = isMultipane ? endDateYear : startDateYear;
+    let month = startDateMonth + 1;
+
+    const calendar = isMultipane ? endDateCalendar : startDateCalendar;
+    const lastWeekOfMonth = calendar[calendar.length - 1].filter(Boolean);
     const lastDayOfMonth = lastWeekOfMonth[lastWeekOfMonth.length - 1];
 
-    onDateSelected({
-      action,
-      actionPressed,
-      selectedPeriod: {
-        start: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${initialDayOffMonth}`,
-        end: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${lastDayOfMonth}`
-      },
-      isPastePeriod: selectedPeriod < initialPeriod
-    })
+    const currentPeriod = {
+      start: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${initialDayOffMonth}`,
+      end: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${lastDayOfMonth}`
+    };
+
+    if (isMultipane) {
+      month += 1;
+      currentPeriod.end = `${endDateYear}-${month >= 10 ? month : `0${month}`}-${lastDayOfMonth}`;
+      current = new Date(endDateYear, endDateMonth);
+    }
+
+    onNavigationChange({
+      direction,
+      type,
+      currentPeriod,
+      isPastPeriod: current < initial
+    });
   }
 
   /**
