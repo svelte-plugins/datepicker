@@ -86,9 +86,10 @@ export interface DatePickerProps {
   onDayClick?: (event: Object) => void;
 
   /**
-   * Callback function to handle previous or next click events.
+   * Callback function to handle the navigation click event for months and years
+   * @type {(event: Object) => void}
    */
-  onDateSelected?: (event: Object) => void;
+  onNavigationChange?: (event: Object) => void;
 
   /**
    * Indicates whether the date picker should always be shown.
