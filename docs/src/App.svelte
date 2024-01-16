@@ -276,6 +276,34 @@
     </table>
   </section>
 
+  <br>
+
+  <section>
+    <h2>Events</h2>
+
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+      <tr>
+        <td>onDayClick</td>
+        <td><code>function</code></td>
+        <td>Callback function to handle day click events.</td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td>onNavigationChange</td>
+        <td><code>function</code></td>
+        <td>Callback function to handle the navigation click event for months and years.</td>
+        <td><code>None</code></td>
+      </tr>
+    </table>
+  </section>
+
+  <br>
   <section>
     <h2>Examples</h2>
     <p>Below are different examples of how you can configure the datepicker.</p>
@@ -374,6 +402,7 @@
 	}
 
   .showcase {
+    display: table-caption;
     height: 350px;
     margin: 48px 0;
     position: relative;
