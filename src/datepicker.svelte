@@ -99,6 +99,12 @@
   export let onDayClick = () => {};
 
   /**
+   * Callback function to handle the navigation click event for months and years
+   * @type {(event: Object) => void}
+   */
+   export let onNavigationChange = () => {};
+
+  /**
    * Indicates whether the date picker should always be shown.
    * @type {boolean}
    */
@@ -335,6 +341,43 @@
   };
 
   /**
+   * Handles the navigation click event for months and years
+   * @param {string} direction - The direction of the navigation (previous or next).
+   * @param {string} type - The type of navigation (month or year).
+   */
+  const onNavigation = async (direction, type) => {
+    await tick();
+
+    const initial = new Date(defaultYear, defaultMonth);
+    const initialDayOffMonth = '01';
+
+    let current = new Date(startDateYear, startDateMonth);
+    let month = startDateMonth + 1;
+
+    const calendar = isMultipane ? endDateCalendar : startDateCalendar;
+    const lastWeekOfMonth = calendar[calendar.length - 1].filter(Boolean);
+    const lastDayOfMonth = lastWeekOfMonth[lastWeekOfMonth.length - 1];
+
+    const currentPeriod = {
+      start: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${initialDayOffMonth}`,
+      end: `${startDateYear}-${month >= 10 ? month : `0${month}`}-${lastDayOfMonth}`
+    };
+
+    if (isMultipane) {
+      month += 1;
+      currentPeriod.end = `${endDateYear}-${month >= 10 ? month : `0${month}`}-${lastDayOfMonth}`;
+      current = new Date(endDateYear, endDateMonth);
+    }
+
+    onNavigationChange({
+      direction,
+      type,
+      currentPeriod,
+      isPastPeriod: current < initial
+    });
+  }
+
+  /**
    * Handles the "to previous month" action in the date picker.
    */
   const toPrev = () => {
@@ -344,6 +387,8 @@
       startDateMonth = 11;
       startDateYear--;
     }
+
+    onNavigation('previous', 'month');
   };
 
   /**
@@ -351,6 +396,7 @@
    */
   const toPrevYear = () => {
     startDateYear--;
+    onNavigation('previous', 'year');
   };
 
   /**
@@ -363,6 +409,7 @@
       startDateMonth = 0;
       startDateYear++;
     }
+    onNavigation('next', 'month');
   };
 
   /**
@@ -370,6 +417,7 @@
    */
   const toNextYear = () => {
     startDateYear++;
+    onNavigation('next', 'year');
   };
 
   /**
