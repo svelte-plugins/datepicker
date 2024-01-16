@@ -397,7 +397,7 @@
    */
   const toPrevYear = () => {
     startDateYear--;
-    selectDate('previous', 'year');
+    onNavigation('previous', 'year');
   };
 
   /**
