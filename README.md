@@ -78,6 +78,12 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 | theme             | The theme name that should be assigned to the theme data-attribute.                   | `string` (default: `''`)
 | presetRanges      | The array of present configs to replace the default set with.                         | `array` (default: [...])
 
+### Events
+| Prop               | Description                                                                           | Default                     |
+| :----------------- | :------------------------------------------------------------------------------------ | :-------------------------- |
+| onDayClick	       | Callback function to handle day click events.	                                       | `function`
+| onNavigationChange | Callback function to handle the navigation click event for months and years           | `function`
+
 ## Theming
 You can customize DatePicker theme using several methods:
 - Assign a theme class name via the `theme` property that includes all of your CSS variables overrides

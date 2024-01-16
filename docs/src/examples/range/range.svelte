@@ -27,6 +27,10 @@
     endDate = '';
   };
 
+  const onNavigationChange = (e) => {
+    console.log(e, 'onNavigationChange');
+  };
+
   const toggleDatePicker = () => (isOpen = !isOpen);
   const formatDate = (dateString) => dateString && format(new Date(dateString), dateFormat) || '';
 
@@ -39,12 +43,13 @@
     bind:isOpen
     bind:startDate
     bind:endDate
+    {onNavigationChange}
     isRange
     {isMultipane}
     {showPresets}
     {...$$restProps}
   >
-    <div class="date-field" on:click={toggleDatePicker} class:open={isOpen}>
+    <div class="date-field" on:click={toggleDatePicker} role="button" tabindex="0" class:open={isOpen}>
       <i class="icon-calendar" />
       <div class="date">
         {#if startDate}
@@ -54,7 +59,7 @@
         {/if}
       </div>
       {#if startDate}
-        <span on:click={onClearDates}>
+        <span role="button" tabindex="0" on:click={onClearDates}>
           <i class="os-icon-x" />
         </span>
       {/if}

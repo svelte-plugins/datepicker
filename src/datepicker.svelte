@@ -1,5 +1,6 @@
 <script>
   // @ts-nocheck
+  import { tick } from 'svelte';
   import { clickOutside } from './actions';
 
   /**
@@ -102,7 +103,7 @@
    * Callback function to handle the navigation click event for months and years
    * @type {(event: Object) => void}
    */
-   export let onNavigationChange = () => {};
+  export let onNavigationChange = () => {};
 
   /**
    * Indicates whether the date picker should always be shown.
@@ -365,6 +366,11 @@
 
     if (isMultipane) {
       month += 1;
+
+      if (month > 11) {
+        month = 1;
+      }
+
       currentPeriod.end = `${endDateYear}-${month >= 10 ? month : `0${month}`}-${lastDayOfMonth}`;
       current = new Date(endDateYear, endDateMonth);
     }
@@ -375,7 +381,7 @@
       currentPeriod,
       isPastPeriod: current < initial
     });
-  }
+  };
 
   /**
    * Handles the "to previous month" action in the date picker.
