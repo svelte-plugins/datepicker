@@ -418,7 +418,7 @@
    */
   const toNextYear = () => {
     startDateYear++;
-    selectDate('next', 'year');
+    onNavigation('next', 'year');
   };
 
   /**
