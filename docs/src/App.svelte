@@ -273,6 +273,12 @@
           </ul>&rbrace;]
         </td>
       </tr>
+      <tr>
+        <td>includeFont</td>
+        <td><code>boolean</code></td>
+        <td>If false, the default font "Rubik" will not be loaded.</td>
+        <td><code>true</code></td>
+      </tr>
     </table>
   </section>
 
@@ -304,6 +310,7 @@
   </section>
 
   <br>
+
   <section>
     <h2>Examples</h2>
     <p>Below are different examples of how you can configure the datepicker.</p>

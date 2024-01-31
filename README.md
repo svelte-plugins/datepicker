@@ -77,6 +77,7 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 | enablePastDates	  |	If disabled, the picker will prevent the user from selecting anything prior to today.	| `boolean` (default: `true`)
 | theme             | The theme name that should be assigned to the theme data-attribute.                   | `string` (default: `''`)
 | presetRanges      | The array of present configs to replace the default set with.                         | `array` (default: [...])
+| includeFont       | If false, the default Rubik font will not be loaded                                   | `boolean` (default: `true`)
 
 ### Events
 | Prop               | Description                                                                           | Default                     |

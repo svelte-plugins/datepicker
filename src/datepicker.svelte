@@ -173,6 +173,12 @@
   ];
 
   /**
+   * Determines if the default font "Rubik" should be loaded.
+   * @type {boolean}
+   */
+  export let includeFont = true;
+
+  /**
    * The number of milliseconds in a day.
    * @type {number}
    */
@@ -1064,10 +1070,12 @@
 </div>
 
 <svelte:head>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
-  />
+  {#if includeFont}
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    />
+  {/if}
 </svelte:head>
 
 <style>

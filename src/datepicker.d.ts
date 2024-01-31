@@ -140,6 +140,11 @@ export interface DatePickerProps {
    * An array of month labels.
    */
   monthLabels?: string[];
+
+  /**
+   * Determines if the default font "Rubik" should be loaded.
+   */
+  includeFont?: boolean;
 }
 
 export interface DatePickerEvents {
