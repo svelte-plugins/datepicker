@@ -870,7 +870,7 @@
   $: endDateYear = endDateMonth === 0 ? startDateYear + 1 : startDateYear;
   $: endDateCalendar = calendarize(new Date(endDateYear, endDateMonth), startOfWeek);
   $: !isRange && (endDate = null);
-  $: theme !== null && document && document.documentElement.setAttribute('data-picker-theme', theme);
+  $: theme !== null && globalThis.document?.documentElement.setAttribute('data-picker-theme', theme);
   $: disabled = getDatesFromArray(disabledDates);
   $: enabled = getDatesFromArray(enabledDates);
 
