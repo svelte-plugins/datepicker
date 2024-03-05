@@ -791,10 +791,11 @@
       return date.getTime();
     }
 
-    const [hours, minutes] = (which === 'start' ? startDateTime : endDateTime).split(':');
+    const [hours = 0, minutes = 0, seconds = 0] = (which === 'start' ? startDateTime : endDateTime).split(':');
 
     date.setHours(hours);
     date.setMinutes(minutes);
+    date.setSeconds(seconds);
 
     return date.getTime();
   };
