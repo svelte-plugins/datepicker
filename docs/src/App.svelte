@@ -104,6 +104,18 @@
         <td><code>false</code></td>
       </tr>
       <tr>
+        <td>showToday</td>
+        <td><code>boolean</code></td>
+        <td>If <code>true</code>, the picker will show the Today action.</td>
+        <td><code>false</code></td>
+      </tr>
+      <tr>
+        <td>todayLabel</td>
+        <td><code>string</code></td>
+        <td>The <code>string</code> containing the Today action label.</td>
+        <td><code>"Today"</code></td>
+      </tr>
+      <tr>
         <td>showTimePicker</td>
         <td><code>boolean</code></td>
         <td>If <code>true</code>, the picker will show the time picker.</td>
@@ -318,7 +330,7 @@
     <h3>Single Date</h3>
 
     <div class="example">
-      <SinglePicker />
+      <SinglePicker showToday />
     </div>
 
     <h3>Date Range</h3>

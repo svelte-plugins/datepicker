@@ -179,6 +179,18 @@
   export let includeFont = true;
 
   /**
+   * Determines if the shortcut for Today button is shown
+   * @type {boolean}
+   */
+  export let showToday = false;
+
+  /**
+   * The label for the Today button
+   * @type {string}
+   */
+  export let todayLabel = 'Today';
+
+  /**
    * The number of milliseconds in a day.
    * @type {number}
    */
@@ -853,6 +865,18 @@
     }, []);
   };
 
+  /**
+   * Handles the "Today" button click event.
+   */
+  const handleTodayClick = () => {
+    startDate = new Date();
+    endDate = isRange ? startDate : null;
+
+    if (!alwaysShow) {
+      isOpen = false;
+    }
+  };
+
   $: startDate = startDate ? getTimestamp(startDate) : null;
   $: endDate = endDate ? getTimestamp(endDate) : null;
 
@@ -873,6 +897,13 @@
   $: theme !== null && document && document.documentElement.setAttribute('data-picker-theme', theme);
   $: disabled = getDatesFromArray(disabledDates);
   $: enabled = getDatesFromArray(enabledDates);
+  $: showTodayAction =
+    showToday &&
+    !showPresets &&
+    !(
+      normalizeTimestamp(startDate) === normalizeTimestamp(today) &&
+      normalizeTimestamp(startDate) === normalizeTimestamp(today)
+    );
 
   $: if (!startDate && !endDate) {
     startDateYear = Number(defaultYear);
@@ -921,7 +952,7 @@
       </div>
     {/if}
     <div class="calendar">
-      <header class:timepicker={showTimePicker}>
+      <header class:timepicker={showTimePicker} class:today-action={showTodayAction}>
         <button on:click={toPrev}>
           <div class="icon-previous-month" aria-label="Previous month"></div>
         </button>
@@ -943,6 +974,12 @@
           <div class="icon-next-month" aria-label="Next month"></div>
         </button>
       </header>
+
+      {#if showTodayAction}
+        <div class="today-action-button">
+          <button on:click={handleTodayClick}>{todayLabel}</button>
+        </div>
+      {/if}
 
       {#if showTimePicker}
         <div class="timepicker" class:show={isRange && !isMultipane}>
@@ -999,7 +1036,7 @@
 
     {#if isRange && isMultipane}
       <div class="calendar">
-        <header class:timepicker={showTimePicker}>
+        <header class:timepicker={showTimePicker} class:today-action={showTodayAction}>
           <button on:click={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
             <div class="icon-previous-month" aria-label="Previous month"></div>
           </button>
@@ -1021,6 +1058,12 @@
             <div class="icon-next-month" aria-label="Next month"></div>
           </button>
         </header>
+
+        {#if showTodayAction}
+          <div class="today-action-button">
+            <button on:click={handleTodayClick}>{todayLabel}</button>
+          </div>
+        {/if}
 
         {#if showTimePicker}
           <div class="timepicker">
@@ -1288,6 +1331,24 @@
     --datepicker-presets-button-padding: calc(var(--datepicker-padding-base) + 2px) var(--datepicker-padding-large);
     --datepicker-presets-button-text-align: left;
     --datepicker-presets-button-zindex-focus: 10;
+
+    /**
+     * Today Container
+     */
+    --datepicker-today-container-align-items: center;
+    --datepicker-today-container-display: flex;
+    --datepicker-today-container-justify-content: space-around;
+    --datepicker-today-container-margin-bottom: var(--datepicker-margin-xlarge);
+
+    /**
+     * Today Button
+     */
+    --datepicker-today-button-background: transparent;
+    --datepicker-today-button-border: 1px solid var(--datepicker-border-color);
+    --datepicker-today-button-border-radius: var(--datepicker-border-radius-base);
+    --datepicker-today-button-cursor: pointer;
+    --datepicker-today-button-font-size: var(--datepicker-font-size-base);
+    --datepicker-today-button-padding: var(--datepicker-padding-small) var(--datepicker-padding-base);
 
     /**
      * Timepicker Container
@@ -1584,6 +1645,27 @@
 
   .datepicker .calendars-container .calendar header button:hover {
     background: var(--datepicker-calendar-header-month-nav-background-hover);
+  }
+
+  .datepicker .calendars-container .calendar header.today-action {
+    margin-bottom: 0;
+  }
+
+  .datepicker .calendars-container .calendar .today-action-button {
+    align-items: var(--datepicker-today-container-align-items);
+    display: var(--datepicker-today-container-display);
+    justify-content: var(--datepicker-today-container-justify-content);
+    margin-bottom: var(--datepicker-today-container-margin-bottom);
+  }
+
+  .datepicker .calendars-container .calendar .today-action-button button {
+    background: var(--datepicker-today-button-background);
+    border: var(--datepicker-today-button-border);
+    border-radius: var(--datepicker-today-button-border-radius);
+    cursor: var(--datepicker-today-button-cursor);
+    display: var(--datepicker-today-button-display);
+    font-size: var(--datepicker-today-button-font-size);
+    padding: var(--datepicker-today-button-padding);
   }
 
   .datepicker .calendars-container .calendar header.timepicker {
