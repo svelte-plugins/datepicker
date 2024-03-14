@@ -945,7 +945,7 @@
         </button>
       </header>
 
-      {#if showTimePicker}
+      {#if showTimePicker && startDate}
         <div class="timepicker" class:show={isRange && !isMultipane}>
           <input type="time" bind:value={startDateTime} on:input={() => (startDate = updateTime('start', startDate))} />
 
@@ -1023,7 +1023,7 @@
           </button>
         </header>
 
-        {#if showTimePicker}
+        {#if showTimePicker && startDate && endDate}
           <div class="timepicker">
             <input type="time" bind:value={endDateTime} on:input={() => (endDate = updateTime('end', endDate))} />
           </div>
@@ -1142,7 +1142,7 @@
      * Container
      */
     --datepicker-container-background: #fff;
-    --datepicker-container-border: 1px solid var(--datepicker-border-color);
+    --datepicker-container-border: 1px solid #e8e9ea;
     --datepicker-container-border-radius: 12px;
     --datepicker-container-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
     --datepicker-container-font-family: var(--datepicker-font-family);
@@ -1429,7 +1429,7 @@
 
   .datepicker .calendars-container {
     background: var(--datepicker-container-background);
-    border: 1px solid var(--datepicker-container-border);
+    border: var(--datepicker-container-border);
     border-radius: var(--datepicker-container-border-radius);
     box-shadow: var(--datepicker-container-box-shadow);
     display: none;
