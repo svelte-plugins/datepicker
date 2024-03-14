@@ -923,7 +923,7 @@
     {/if}
     <div class="calendar">
       <header class:timepicker={showTimePicker}>
-        <button on:click={toPrev}>
+        <button type="button" on:click={toPrev}>
           <div class="icon-previous-month" aria-label="Previous month"></div>
         </button>
         <span>
@@ -931,16 +931,16 @@
 
           {#if showYearControls}
             <div class="years">
-              <button on:click={toNextYear}>
+              <button type="button" on:click={toNextYear}>
                 <i class="icon-next-year" aria-label="Next year" />
               </button>
-              <button on:click={toPrevYear}>
+              <button type="button" on:click={toPrevYear}>
                 <i class="icon-previous-year" aria-label="Previous year" />
               </button>
             </div>
           {/if}
         </span>
-        <button on:click={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
+        <button type="button" on:click={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
           <div class="icon-next-month" aria-label="Next month"></div>
         </button>
       </header>
@@ -970,6 +970,7 @@
             {#each { length: 7 } as d, dayIndex (dayIndex)}
               {#if startDateCalendar[weekIndex][dayIndex] !== 0}
                 <button
+                  type="button"
                   class="date"
                   class:today={isToday(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:start={isFirstInRange(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
@@ -1001,7 +1002,7 @@
     {#if isRange && isMultipane}
       <div class="calendar">
         <header class:timepicker={showTimePicker}>
-          <button on:click={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
+          <button type="button" on:click={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
             <div class="icon-previous-month" aria-label="Previous month"></div>
           </button>
           <span>
@@ -1009,16 +1010,16 @@
 
             {#if showYearControls}
               <div class="years">
-                <button on:click={toNextYear}>
+                <button type="button" on:click={toNextYear}>
                   <i class="icon-next-year" aria-label="Next year" />
                 </button>
-                <button on:click={toPrevYear}>
+                <button type="button" on:click={toPrevYear}>
                   <i class="icon-previous-year" aria-label="Previous year" />
                 </button>
               </div>
             {/if}
           </span>
-          <button on:click={toNext}>
+          <button type="button" on:click={toNext}>
             <div class="icon-next-month" aria-label="Next month"></div>
           </button>
         </header>
@@ -1039,6 +1040,7 @@
               {#each { length: 7 } as d, dayIndex (dayIndex)}
                 {#if endDateCalendar[weekIndex][dayIndex] !== 0}
                   <button
+                    type="button"
                     class="date"
                     class:today={isToday(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:range={inRange(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
