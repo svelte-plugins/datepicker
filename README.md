@@ -433,17 +433,29 @@ DatePicker CSS variables:
 
 <style>
   :global(.datepicker[data-picker-theme="custom-datepicker"]) {
-    --datepicker-state-active: pink;
-    --datepicker-container-background: #FF66AE;
+    --datepicker-container-background: #ff66ae;
+    --datepicker-container-border: 1px solid #ff1683;
+
     --datepicker-calendar-header-text-color: #fff;
     --datepicker-calendar-dow-color: #fff;
     --datepicker-calendar-day-color: #fff;
     --datepicker-calendar-day-color-disabled: pink;
     --datepicker-calendar-range-selected-background: #ff1683;
+
+    --datepicker-calendar-header-month-nav-background-hover: #ff1683;
     --datepicker-calendar-header-month-nav-icon-next-filter: invert(100);
     --datepicker-calendar-header-month-nav-icon-prev-filter: invert(100);
     --datepicker-calendar-header-year-nav-icon-next-filter: invert(100);
     --datepicker-calendar-header-year-nav-icon-prev-filter: invert(100);
+
+    --datepicker-calendar-split-border: 1px solid pink;
+
+    --datepicker-presets-border: 1px solid pink;
+    --datepicker-presets-button-background-active: #ff1683;
+    --datepicker-presets-button-color: #fff;
+    --datepicker-presets-button-color-active: #fff;
+    --datepicker-presets-button-color-hover: #333;
+    --datepicker-presets-button-color-focus: #333;
   }
 </style>
 ```
