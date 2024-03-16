@@ -366,7 +366,7 @@
     <h3>Enabled Dates</h3>
 
     <div class="example">
-      <SinglePicker enableFutureDates enabledDates={['1/14/24:1/25/24']} />
+      <SinglePicker enableFutureDates enabledDates={['1/14/23:3/16/24']} />
     </div>
 
     <h3>Theme</h3>
