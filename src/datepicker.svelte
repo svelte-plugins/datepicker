@@ -828,34 +828,26 @@
   };
 
   /**
-   * Returns an array of timestamps from an array of date strings.
+   * Returns an array of timestamps from an array of date strings, considering leap years.
    * @param {string[]} collection - An array of date strings.
-   * @param {boolean} enabled - Indicates whether the dates are enabled.
    * @returns {number[]} - An array of timestamps.
    */
-  const getDatesFromArray = (collection, enabled) => {
+  const getDatesFromArray = (collection) => {
     return collection.reduce((acc, date) => {
       let newDates = [];
 
-      if (date instanceof Date) {
-        newDates = [normalizeTimestamp(date.getTime())];
-      } else if (typeof date === 'string' && date.includes(':')) {
-        const [rangeStart, rangeEnd] = date.split(':');
+      if (typeof date === 'string') {
+        if (date.includes(':')) {
+          const [rangeStart, rangeEnd] = date.split(':').map((d) => new Date(d));
+          let currentDate = new Date(rangeStart);
 
-        let dateRangeStart = new Date(rangeStart).getTime();
-        let dateRangeEnd = new Date(rangeEnd).getTime();
-
-        if (enabled) {
-          const newDateRangeEnd = new Date(rangeEnd);
-          newDateRangeEnd.setDate(newDateRangeEnd.getDate() + 1);
-          dateRangeEnd = newDateRangeEnd.getTime();
+          while (currentDate <= rangeEnd) {
+            newDates.push(normalizeTimestamp(currentDate.getTime()));
+            currentDate.setDate(currentDate.getDate() + 1);
+          }
+        } else {
+          newDates.push(normalizeTimestamp(new Date(date).getTime()));
         }
-
-        for (; dateRangeStart <= dateRangeEnd; dateRangeStart += MILLISECONDS_IN_DAY) {
-          newDates = [...newDates, normalizeTimestamp(dateRangeStart)];
-        }
-      } else {
-        newDates = [normalizeTimestamp(new Date(date).getTime())];
       }
 
       return [...acc, ...newDates];
