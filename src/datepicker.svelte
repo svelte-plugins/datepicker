@@ -830,24 +830,32 @@
   /**
    * Returns an array of timestamps from an array of date strings.
    * @param {string[]} collection - An array of date strings.
+   * @param {boolean} enabled - Indicates whether the dates are enabled.
    * @returns {number[]} - An array of timestamps.
    */
-  const getDatesFromArray = (collection) => {
+  const getDatesFromArray = (collection, enabled) => {
     return collection.reduce((acc, date) => {
       let newDates = [];
 
       if (date instanceof Date) {
-        newDates = [date.getTime()];
+        newDates = [normalizeTimestamp(date.getTime())];
       } else if (typeof date === 'string' && date.includes(':')) {
         const [rangeStart, rangeEnd] = date.split(':');
+
         let dateRangeStart = new Date(rangeStart).getTime();
         let dateRangeEnd = new Date(rangeEnd).getTime();
 
+        if (enabled) {
+          const newDateRangeEnd = new Date(rangeEnd);
+          newDateRangeEnd.setDate(newDateRangeEnd.getDate() + 1);
+          dateRangeEnd = newDateRangeEnd.getTime();
+        }
+
         for (; dateRangeStart <= dateRangeEnd; dateRangeStart += MILLISECONDS_IN_DAY) {
-          newDates = [...newDates, dateRangeStart];
+          newDates = [...newDates, normalizeTimestamp(dateRangeStart)];
         }
       } else {
-        newDates = [new Date(date).getTime()];
+        newDates = [normalizeTimestamp(new Date(date).getTime())];
       }
 
       return [...acc, ...newDates];
@@ -873,7 +881,7 @@
   $: !isRange && (endDate = null);
   $: theme !== null && globalThis.document?.documentElement.setAttribute('data-picker-theme', theme);
   $: disabled = getDatesFromArray(disabledDates);
-  $: enabled = getDatesFromArray(enabledDates);
+  $: enabled = getDatesFromArray(enabledDates, true);
 
   $: if (!startDate && !endDate) {
     startDateYear = Number(defaultYear);
