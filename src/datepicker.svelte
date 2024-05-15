@@ -803,10 +803,11 @@
       return date.getTime();
     }
 
-    const [hours, minutes] = (which === 'start' ? startDateTime : endDateTime).split(':');
+    const [hours = 0, minutes = 0, seconds = 0] = (which === 'start' ? startDateTime : endDateTime).split(':');
 
     date.setHours(hours);
     date.setMinutes(minutes);
+    date.setSeconds(seconds);
 
     return date.getTime();
   };
@@ -839,7 +840,7 @@
   };
 
   /**
-   * Returns an array of timestamps from an array of date strings.
+   * Returns an array of timestamps from an array of date strings, considering leap years.
    * @param {string[]} collection - An array of date strings.
    * @returns {number[]} - An array of timestamps.
    */
@@ -847,18 +848,18 @@
     return collection.reduce((acc, date) => {
       let newDates = [];
 
-      if (date instanceof Date) {
-        newDates = [date.getTime()];
-      } else if (typeof date === 'string' && date.includes(':')) {
-        const [rangeStart, rangeEnd] = date.split(':');
-        let dateRangeStart = new Date(rangeStart).getTime();
-        let dateRangeEnd = new Date(rangeEnd).getTime();
+      if (typeof date === 'string') {
+        if (date.includes(':')) {
+          const [rangeStart, rangeEnd] = date.split(':').map((d) => new Date(d));
+          let currentDate = new Date(rangeStart);
 
-        for (; dateRangeStart <= dateRangeEnd; dateRangeStart += MILLISECONDS_IN_DAY) {
-          newDates = [...newDates, dateRangeStart];
+          while (currentDate <= rangeEnd) {
+            newDates.push(normalizeTimestamp(currentDate.getTime()));
+            currentDate.setDate(currentDate.getDate() + 1);
+          }
+        } else {
+          newDates.push(normalizeTimestamp(new Date(date).getTime()));
         }
-      } else {
-        newDates = [new Date(date).getTime()];
       }
 
       return [...acc, ...newDates];
@@ -894,9 +895,9 @@
   $: endDateYear = endDateMonth === 0 ? startDateYear + 1 : startDateYear;
   $: endDateCalendar = calendarize(new Date(endDateYear, endDateMonth), startOfWeek);
   $: !isRange && (endDate = null);
-  $: theme !== null && document && document.documentElement.setAttribute('data-picker-theme', theme);
+  $: theme !== null && globalThis.document?.documentElement.setAttribute('data-picker-theme', theme);
   $: disabled = getDatesFromArray(disabledDates);
-  $: enabled = getDatesFromArray(enabledDates);
+
   $: showTodayAction =
     showToday &&
     !showPresets &&
@@ -953,7 +954,7 @@
     {/if}
     <div class="calendar">
       <header class:timepicker={showTimePicker} class:today-action={showTodayAction}>
-        <button on:click={toPrev}>
+        <button type="button" on:click={toPrev}>
           <div class="icon-previous-month" aria-label="Previous month"></div>
         </button>
         <span>
@@ -961,16 +962,16 @@
 
           {#if showYearControls}
             <div class="years">
-              <button on:click={toNextYear}>
+              <button type="button" on:click={toNextYear}>
                 <i class="icon-next-year" aria-label="Next year" />
               </button>
-              <button on:click={toPrevYear}>
+              <button type="button" on:click={toPrevYear}>
                 <i class="icon-previous-year" aria-label="Previous year" />
               </button>
             </div>
           {/if}
         </span>
-        <button on:click={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
+        <button type="button" on:click={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
           <div class="icon-next-month" aria-label="Next month"></div>
         </button>
       </header>
@@ -981,7 +982,7 @@
         </div>
       {/if}
 
-      {#if showTimePicker}
+      {#if showTimePicker && startDate}
         <div class="timepicker" class:show={isRange && !isMultipane}>
           <input type="time" bind:value={startDateTime} on:input={() => (startDate = updateTime('start', startDate))} />
 
@@ -1006,6 +1007,7 @@
             {#each { length: 7 } as d, dayIndex (dayIndex)}
               {#if startDateCalendar[weekIndex][dayIndex] !== 0}
                 <button
+                  type="button"
                   class="date"
                   class:today={isToday(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:start={isFirstInRange(startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
@@ -1037,7 +1039,7 @@
     {#if isRange && isMultipane}
       <div class="calendar">
         <header class:timepicker={showTimePicker} class:today-action={showTodayAction}>
-          <button on:click={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
+          <button type="button" on:click={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
             <div class="icon-previous-month" aria-label="Previous month"></div>
           </button>
           <span>
@@ -1045,27 +1047,27 @@
 
             {#if showYearControls}
               <div class="years">
-                <button on:click={toNextYear}>
+                <button type="button" on:click={toNextYear}>
                   <i class="icon-next-year" aria-label="Next year" />
                 </button>
-                <button on:click={toPrevYear}>
+                <button type="button" on:click={toPrevYear}>
                   <i class="icon-previous-year" aria-label="Previous year" />
                 </button>
               </div>
             {/if}
           </span>
-          <button on:click={toNext}>
+          <button type="button" on:click={toNext}>
             <div class="icon-next-month" aria-label="Next month"></div>
           </button>
         </header>
 
         {#if showTodayAction}
           <div class="today-action-button">
-            <button on:click={handleTodayClick}>{todayLabel}</button>
+            <button type="button" on:click={handleTodayClick}>{todayLabel}</button>
           </div>
         {/if}
 
-        {#if showTimePicker}
+        {#if showTimePicker && startDate && endDate}
           <div class="timepicker">
             <input type="time" bind:value={endDateTime} on:input={() => (endDate = updateTime('end', endDate))} />
           </div>
@@ -1081,6 +1083,7 @@
               {#each { length: 7 } as d, dayIndex (dayIndex)}
                 {#if endDateCalendar[weekIndex][dayIndex] !== 0}
                   <button
+                    type="button"
                     class="date"
                     class:today={isToday(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:range={inRange(endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
@@ -1184,7 +1187,7 @@
      * Container
      */
     --datepicker-container-background: #fff;
-    --datepicker-container-border: 1px solid var(--datepicker-border-color);
+    --datepicker-container-border: 1px solid #e8e9ea;
     --datepicker-container-border-radius: 12px;
     --datepicker-container-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
     --datepicker-container-font-family: var(--datepicker-font-family);
@@ -1489,7 +1492,7 @@
 
   .datepicker .calendars-container {
     background: var(--datepicker-container-background);
-    border: 1px solid var(--datepicker-container-border);
+    border: var(--datepicker-container-border);
     border-radius: var(--datepicker-container-border-radius);
     box-shadow: var(--datepicker-container-box-shadow);
     display: none;

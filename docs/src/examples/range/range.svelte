@@ -100,7 +100,7 @@
 </script>
 
 <div class="date-filter">
-  <DatePicker bind:isOpen bind:startDate isRange${isMultipane ? ' isMultipane' : ''}${showPresets ? ' showPresets' : ''}>
+  <DatePicker bind:isOpen bind:startDate bind:endDate isRange${isMultipane ? ' isMultipane' : ''}${showPresets ? ' showPresets' : ''}>
     <div class="date-field" on:click={toggleDatePicker} class:open={isOpen}>
       <i class="icon-calendar" />
       <div class="date">

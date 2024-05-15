@@ -47,6 +47,12 @@
         <td><code>null</code></td>
       </tr>
       <tr>
+        <td>endDate</td>
+        <td><code>object</code></td>
+        <td>The end date <code>string</code> or <code>date</code> object.</td>
+        <td><code>null</code></td>
+      </tr>
+      <tr>
         <td>startDateTime</td>
         <td><code>string</code></td>
         <td>The start date time <code>string</code> in 24 hour format.</td>
@@ -378,7 +384,7 @@
     <h3>Enabled Dates</h3>
 
     <div class="example">
-      <SinglePicker enableFutureDates enabledDates={['1/14/24:1/25/24']} />
+      <SinglePicker enableFutureDates enabledDates={['1/14/23:3/16/24']} />
     </div>
 
     <h3>Theme</h3>
