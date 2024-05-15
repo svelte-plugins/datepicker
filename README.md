@@ -61,6 +61,7 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 | Prop              | Description                                                                           | Default                     |
 | :---------------- | :------------------------------------------------------------------------------------ | :-------------------------- |
 | startDate	        | The start date string or date object.	                                                | `object` (default: `null`)
+| endDate	          | The end date string or date object.	                                                  | `object` (default: `null`)
 | startDateTime	    | The start date time string in 24 hour format.	                                        | `string` (default: `00:00`)
 | endDateTime	      | The end date time string in 24 hour format.                                           | `string` (default: `00:00`)
 | defaultYear	      |	The year you want to show as the default.	                                            | `number` (default: `2023`)
