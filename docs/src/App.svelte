@@ -47,6 +47,12 @@
         <td><code>null</code></td>
       </tr>
       <tr>
+        <td>endDate</td>
+        <td><code>object</code></td>
+        <td>The end date <code>string</code> or <code>date</code> object.</td>
+        <td><code>null</code></td>
+      </tr>
+      <tr>
         <td>startDateTime</td>
         <td><code>string</code></td>
         <td>The start date time <code>string</code> in 24 hour format.</td>
