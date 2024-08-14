@@ -767,10 +767,17 @@
    * @param {Object} preset - The preset date range object with start and end dates.
    * @param {number} preset.start - The start date of the preset range.
    * @param {number} preset.end - The end date of the preset range.
+   * @param {string} preset.startTime - The start time of the preset range.
+   * @param {string} preset.endTime - The end time of the preset range.
    */
-  const onPresetClick = ({ start, end }) => {
+  const onPresetClick = ({ start, startTime, end, endTime }) => {
     startDate = start;
     endDate = end;
+
+    if (startTime && endTime) {
+        startDateTime = startTime;
+        endDateTime = endTime;
+    }
 
     if (!alwaysShow) {
       isOpen = false;
