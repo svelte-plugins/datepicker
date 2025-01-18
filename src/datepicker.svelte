@@ -131,6 +131,13 @@
   export let showPresets = false;
 
   /**
+   * Indicates whether preset date ranges should only be displayed
+   * @type {boolean}
+   * @default false
+   */
+  export let showPresetsOnly = false;
+
+  /**
    * Indicates whether the time picker is shown in the date picker.
    * @type {boolean}
    */
@@ -929,7 +936,7 @@
     class:show={isOpen}
   >
     {#if isRange && showPresets}
-      <div class="calendar-presets">
+      <div class="calendar-presets" class:presets-only={showPresetsOnly}>
         {#each presetRanges as option}
           <button
             type="button"
@@ -942,7 +949,7 @@
         {/each}
       </div>
     {/if}
-    <div class="calendar">
+    <div class="calendar" class:presets-only={isRange && showPresetsOnly}>
       <header class:timepicker={showTimePicker}>
         <button type="button" on:click|preventDefault={toPrev}>
           <div class="icon-previous-month" aria-label="Previous month"></div>
@@ -1021,7 +1028,7 @@
     </div>
 
     {#if isRange && isMultipane}
-      <div class="calendar">
+      <div class="calendar" class:presets-only={showPresetsOnly}>
         <header class:timepicker={showTimePicker}>
           <button type="button" on:click|preventDefault={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
             <div class="icon-previous-month" aria-label="Previous month"></div>
@@ -1499,6 +1506,11 @@
     padding: var(--datepicker-presets-padding);
   }
 
+  .datepicker .calendars-container.presets .calendar-presets.presets-only {
+    border-right: 0;
+    min-width: 100%;
+  }
+
   .datepicker .calendars-container .calendar-presets button {
     appearance: none;
     background-color: var(--datepicker-presets-button-background);
@@ -1537,6 +1549,10 @@
     padding: var(--datepicker-calendar-padding);
     position: var(--datepicker-calendar-position);
     width: var(--datepicker-calendar-width);
+  }
+
+  .datepicker .calendars-container .calendar.presets-only {
+    display: none;
   }
 
   .datepicker .calendars-container .calendar + .calendar {
@@ -1901,6 +1917,12 @@
 
     .datepicker .calendars-container .calendar header button.hide {
       opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .datepicker .calendars-container.presets .calendar-presets:not(.presets-only) {
+      display: none;
     }
   }
 </style>
