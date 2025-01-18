@@ -1150,6 +1150,7 @@
     --datepicker-container-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
     --datepicker-container-font-family: var(--datepicker-font-family);
     --datepicker-container-left: 0;
+    --datepicker-container-top: 105%;
     --datepicker-container-position: absolute;
     --datepicker-container-width: fit-content;
     --datepicker-container-zindex: 99;
@@ -1451,7 +1452,7 @@
 
   .datepicker .calendars-container.show {
     display: grid;
-    top: 105%;
+    top: var(--datepicker-container-top);
   }
 
   .datepicker .calendars-container.range {
