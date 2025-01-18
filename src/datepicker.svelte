@@ -912,6 +912,7 @@
       <div class="calendar-presets">
         {#each presetRanges as option}
           <button
+            type="button"
             class:active={normalizeTimestamp(startDate) === normalizeTimestamp(option.start) &&
               normalizeTimestamp(endDate) === normalizeTimestamp(option.end)}
             on:click|preventDefault={() => onPresetClick({ ...option })}
