@@ -209,6 +209,8 @@
     --datepicker-presets-button-color: #fff;
     --datepicker-presets-button-color-active: #fff;
     --datepicker-presets-button-color-hover: #333;
-    --datepicker-presets-button-color-focus: #333
+    --datepicker-presets-button-color-focus: #333;
+    --datepicker-spacing: 90px;
+
   }
 </style>

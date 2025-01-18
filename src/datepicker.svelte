@@ -94,6 +94,13 @@
   export let enabledDates = [];
 
   /**
+   * Callback function triggered when a date or date range changes.
+   * @type {function}
+   * @default () => {}
+   */
+  export let onDateChange = () => {};
+
+  /**
    * Callback function to handle day click events.
    * @type {(event: Object) => void}
    */
@@ -483,7 +490,6 @@
    *
    * @param {number} startDate - The timestamp of the start date.
    * @param {number} endDate - The timestamp of the end date.
-   * @param {string[]} disabled - An array of disabled dates.
    * @returns {string[]} - An array of dates within the specified range.
    */
   const getDatesInRange = (startDate, endDate) => {
@@ -495,10 +501,11 @@
       const formattedDate = `${
         dateRangeStart.getMonth() + 1
       }/${dateRangeStart.getDate()}/${dateRangeStart.getFullYear()}`;
+
       if (
         (!enabled && !disabled) ||
         (enabled.length && enabled.includes(formattedDate)) ||
-        (disabled.length && !disabled.includes(formattedDate))
+        !disabled.includes(formattedDate)
       ) {
         datesInRange.push(formattedDate);
       }
@@ -545,6 +552,10 @@
     };
 
     onDayClick(event);
+
+    if ((isRange && startDate && endDate) || (!isRange && startDate)) {
+      onDateChange(event);
+    }
   };
 
   /**
@@ -771,6 +782,16 @@
   const onPresetClick = ({ start, end }) => {
     startDate = start;
     endDate = end;
+
+    if (isRange && startDate && endDate) {
+      onDateChange({
+        startDate,
+        startDateTime,
+        endDate,
+        endDateTime,
+        rangeDates: getDatesInRange(startDate, endDate)
+      });
+    }
 
     if (!alwaysShow) {
       isOpen = false;

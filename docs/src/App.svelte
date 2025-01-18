@@ -301,6 +301,12 @@
         <th>Default</th>
       </tr>
       <tr>
+        <td>onDateChange</td>
+        <td><code>function</code></td>
+        <td>Callback function to handle when date changes.</td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
         <td>onDayClick</td>
         <td><code>function</code></td>
         <td>Callback function to handle day click events.</td>
