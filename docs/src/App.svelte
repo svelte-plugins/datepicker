@@ -26,7 +26,9 @@
     The <code>DatePicker</code> component allows users to easily select a date or date-range from one or more calendars.
 
     <div class="showcase">
-      <DatePicker startDate={getDateFromToday(29)} endDate={today} showYearControls={false} isMultipane showPresets isRange isOpen alwaysShow />
+      <form on:submit={() => console.log('okoko')}>
+        <DatePicker startDate={getDateFromToday(29)} endDate={today} showYearControls={false} isMultipane showPresets isRange isOpen alwaysShow />
+      </form>
     </div>
   </section>
 

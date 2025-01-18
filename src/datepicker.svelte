@@ -914,7 +914,7 @@
           <button
             class:active={normalizeTimestamp(startDate) === normalizeTimestamp(option.start) &&
               normalizeTimestamp(endDate) === normalizeTimestamp(option.end)}
-            on:click={() => onPresetClick({ ...option })}
+            on:click|preventDefault={() => onPresetClick({ ...option })}
           >
             {option.label}
           </button>
@@ -923,24 +923,23 @@
     {/if}
     <div class="calendar">
       <header class:timepicker={showTimePicker}>
-        <button type="button" on:click={toPrev}>
+        <button type="button" on:click|preventDefault={toPrev}>
           <div class="icon-previous-month" aria-label="Previous month"></div>
         </button>
         <span>
           <div>{monthLabels[startDateMonth]} {startDateYear}</div>
-
           {#if showYearControls}
             <div class="years">
-              <button type="button" on:click={toNextYear}>
+              <button type="button" on:click|preventDefault={toNextYear}>
                 <i class="icon-next-year" aria-label="Next year" />
               </button>
-              <button type="button" on:click={toPrevYear}>
+              <button type="button" on:click|preventDefault={toPrevYear}>
                 <i class="icon-previous-year" aria-label="Previous year" />
               </button>
             </div>
           {/if}
         </span>
-        <button type="button" on:click={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
+        <button type="button" on:click|preventDefault={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
           <div class="icon-next-month" aria-label="Next month"></div>
         </button>
       </header>
@@ -985,7 +984,8 @@
                   on:mouseenter={(e) =>
                     onMouseEnter(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   on:mouseleave={onMouseLeave}
-                  on:click={(e) => onClick(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
+                  on:click|preventDefault={(e) =>
+                    onClick(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:norange={isRange && tempEndDate === startDate}
                 >
                   <span>{startDateCalendar[weekIndex][dayIndex]}</span>
@@ -1002,7 +1002,7 @@
     {#if isRange && isMultipane}
       <div class="calendar">
         <header class:timepicker={showTimePicker}>
-          <button type="button" on:click={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
+          <button type="button" on:click|preventDefault={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
             <div class="icon-previous-month" aria-label="Previous month"></div>
           </button>
           <span>
@@ -1010,16 +1010,16 @@
 
             {#if showYearControls}
               <div class="years">
-                <button type="button" on:click={toNextYear}>
+                <button type="button" on:click|preventDefault={toNextYear}>
                   <i class="icon-next-year" aria-label="Next year" />
                 </button>
-                <button type="button" on:click={toPrevYear}>
+                <button type="button" on:click|preventDefault={toPrevYear}>
                   <i class="icon-previous-year" aria-label="Previous year" />
                 </button>
               </div>
             {/if}
           </span>
-          <button type="button" on:click={toNext}>
+          <button type="button" on:click|preventDefault={toNext}>
             <div class="icon-next-month" aria-label="Next month"></div>
           </button>
         </header>
@@ -1055,7 +1055,8 @@
                     on:mouseenter={(e) =>
                       onMouseEnter(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     on:mouseleave={onMouseLeave}
-                    on:click={(e) => onClick(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
+                    on:click|preventDefault={(e) =>
+                      onClick(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:norange={isRange && tempEndDate === startDate}
                   >
                     <span>{endDateCalendar[weekIndex][dayIndex]}</span>
