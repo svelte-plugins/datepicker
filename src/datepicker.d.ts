@@ -81,6 +81,11 @@ export interface DatePickerProps {
   enabledDates?: string[];
 
   /**
+   * Callback function to handle when the date change events.
+   */
+  onDateChange?: (event: Object) => void;
+
+  /**
    * Callback function to handle day click events.
    */
   onDayClick?: (event: Object) => void;
@@ -105,6 +110,11 @@ export interface DatePickerProps {
    * Indicates whether preset options are displayed in the date picker.
    */
   showPresets?: boolean;
+
+  /**
+   * Indicates whether preset options should only be shown for range pickers.
+   */
+  showPresetsOnly?: boolean;
 
   /**
    * Indicates whether the time picker is shown in the date picker.
