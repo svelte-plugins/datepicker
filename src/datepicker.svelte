@@ -882,6 +882,10 @@
     }, []);
   };
 
+  if (typeof startOfWeek === 'string') {
+    startOfWeek = parseInt(startOfWeek, 10);
+  }
+
   $: startDate = startDate ? getTimestamp(startDate) : null;
   $: endDate = endDate ? getTimestamp(endDate) : null;
 
