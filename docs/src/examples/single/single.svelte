@@ -29,10 +29,14 @@
     console.log(e, 'onNavigationChange');
   };
 
+  const onDateChange = (args) => {
+    console.log(args, 'onDateChange');
+  };
+
   $: formattedStartDate = formatDate(startDate);
 </script>
 
-<DatePicker bind:isOpen bind:startDate {...$$props} {onNavigationChange}>
+<DatePicker bind:isOpen bind:startDate {...$$props} {onNavigationChange} {onDateChange}>
   <input type="text" bind:value={formattedStartDate} on:change={onChange} on:click={toggleDatePicker} />
 </DatePicker>
 

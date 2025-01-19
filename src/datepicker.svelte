@@ -94,6 +94,13 @@
   export let enabledDates = [];
 
   /**
+   * Callback function triggered when a date or date range changes.
+   * @type {function}
+   * @default () => {}
+   */
+  export let onDateChange = () => {};
+
+  /**
    * Callback function to handle day click events.
    * @type {(event: Object) => void}
    */
@@ -122,6 +129,13 @@
    * @type {boolean}
    */
   export let showPresets = false;
+
+  /**
+   * Indicates whether preset date ranges should only be displayed
+   * @type {boolean}
+   * @default false
+   */
+  export let showPresetsOnly = false;
 
   /**
    * Indicates whether the time picker is shown in the date picker.
@@ -483,7 +497,6 @@
    *
    * @param {number} startDate - The timestamp of the start date.
    * @param {number} endDate - The timestamp of the end date.
-   * @param {string[]} disabled - An array of disabled dates.
    * @returns {string[]} - An array of dates within the specified range.
    */
   const getDatesInRange = (startDate, endDate) => {
@@ -495,10 +508,11 @@
       const formattedDate = `${
         dateRangeStart.getMonth() + 1
       }/${dateRangeStart.getDate()}/${dateRangeStart.getFullYear()}`;
+
       if (
         (!enabled && !disabled) ||
         (enabled.length && enabled.includes(formattedDate)) ||
-        (disabled.length && !disabled.includes(formattedDate))
+        !disabled.includes(formattedDate)
       ) {
         datesInRange.push(formattedDate);
       }
@@ -545,6 +559,10 @@
     };
 
     onDayClick(event);
+
+    if ((isRange && startDate && endDate) || (!isRange && startDate)) {
+      onDateChange(event);
+    }
   };
 
   /**
@@ -768,9 +786,24 @@
    * @param {number} preset.start - The start date of the preset range.
    * @param {number} preset.end - The end date of the preset range.
    */
-  const onPresetClick = ({ start, end }) => {
+  const onPresetClick = ({ start, startTime, end, endTime }) => {
     startDate = start;
     endDate = end;
+
+    if (startTime && endTime) {
+      startDateTime = startTime;
+      endDateTime = endTime;
+    }
+
+    if (isRange && startDate && endDate) {
+      onDateChange({
+        startDate,
+        startDateTime,
+        endDate,
+        endDateTime,
+        rangeDates: getDatesInRange(startDate, endDate)
+      });
+    }
 
     if (!alwaysShow) {
       isOpen = false;
@@ -854,6 +887,10 @@
     }, []);
   };
 
+  if (typeof startOfWeek === 'string') {
+    startOfWeek = parseInt(startOfWeek, 10);
+  }
+
   $: startDate = startDate ? getTimestamp(startDate) : null;
   $: endDate = endDate ? getTimestamp(endDate) : null;
 
@@ -871,7 +908,6 @@
   $: endDateYear = endDateMonth === 0 ? startDateYear + 1 : startDateYear;
   $: endDateCalendar = calendarize(new Date(endDateYear, endDateMonth), startOfWeek);
   $: !isRange && (endDate = null);
-  $: theme !== null && globalThis.document?.documentElement.setAttribute('data-picker-theme', theme);
   $: disabled = getDatesFromArray(disabledDates);
   $: enabled = getDatesFromArray(enabledDates, true);
 
@@ -892,7 +928,7 @@
     }
   }
 
-  $: if (startDate && showTimePicker && !initialize) {
+  $: if (showTimePicker && !initialize) {
     startDateTime = getHoursAndMinutes(startDate);
     endDateTime = getHoursAndMinutes(endDate);
     initialize = true;
@@ -909,43 +945,43 @@
     class:show={isOpen}
   >
     {#if isRange && showPresets}
-      <div class="calendar-presets">
+      <div class="calendar-presets" class:presets-only={showPresetsOnly}>
         {#each presetRanges as option}
           <button
+            type="button"
             class:active={normalizeTimestamp(startDate) === normalizeTimestamp(option.start) &&
               normalizeTimestamp(endDate) === normalizeTimestamp(option.end)}
-            on:click={() => onPresetClick({ ...option })}
+            on:click|preventDefault={() => onPresetClick({ ...option })}
           >
             {option.label}
           </button>
         {/each}
       </div>
     {/if}
-    <div class="calendar">
+    <div class="calendar" class:presets-only={isRange && showPresetsOnly}>
       <header class:timepicker={showTimePicker}>
-        <button type="button" on:click={toPrev}>
+        <button type="button" on:click|preventDefault={toPrev}>
           <div class="icon-previous-month" aria-label="Previous month"></div>
         </button>
         <span>
           <div>{monthLabels[startDateMonth]} {startDateYear}</div>
-
           {#if showYearControls}
             <div class="years">
-              <button type="button" on:click={toNextYear}>
+              <button type="button" on:click|preventDefault={toNextYear}>
                 <i class="icon-next-year" aria-label="Next year" />
               </button>
-              <button type="button" on:click={toPrevYear}>
+              <button type="button" on:click|preventDefault={toPrevYear}>
                 <i class="icon-previous-year" aria-label="Previous year" />
               </button>
             </div>
           {/if}
         </span>
-        <button type="button" on:click={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
+        <button type="button" on:click|preventDefault={toNext} class:hide={!(!isRange || (isRange && !isMultipane))}>
           <div class="icon-next-month" aria-label="Next month"></div>
         </button>
       </header>
 
-      {#if showTimePicker && startDate}
+      {#if showTimePicker}
         <div class="timepicker" class:show={isRange && !isMultipane}>
           <input type="time" bind:value={startDateTime} on:input={() => (startDate = updateTime('start', startDate))} />
 
@@ -985,7 +1021,8 @@
                   on:mouseenter={(e) =>
                     onMouseEnter(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   on:mouseleave={onMouseLeave}
-                  on:click={(e) => onClick(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
+                  on:click|preventDefault={(e) =>
+                    onClick(e, startDateCalendar[weekIndex][dayIndex], startDateMonth, startDateYear)}
                   class:norange={isRange && tempEndDate === startDate}
                 >
                   <span>{startDateCalendar[weekIndex][dayIndex]}</span>
@@ -1000,9 +1037,9 @@
     </div>
 
     {#if isRange && isMultipane}
-      <div class="calendar">
+      <div class="calendar" class:presets-only={showPresetsOnly}>
         <header class:timepicker={showTimePicker}>
-          <button type="button" on:click={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
+          <button type="button" on:click|preventDefault={toPrev} class:hide={!(!isRange || (isRange && !isMultipane))}>
             <div class="icon-previous-month" aria-label="Previous month"></div>
           </button>
           <span>
@@ -1010,21 +1047,21 @@
 
             {#if showYearControls}
               <div class="years">
-                <button type="button" on:click={toNextYear}>
+                <button type="button" on:click|preventDefault={toNextYear}>
                   <i class="icon-next-year" aria-label="Next year" />
                 </button>
-                <button type="button" on:click={toPrevYear}>
+                <button type="button" on:click|preventDefault={toPrevYear}>
                   <i class="icon-previous-year" aria-label="Previous year" />
                 </button>
               </div>
             {/if}
           </span>
-          <button type="button" on:click={toNext}>
+          <button type="button" on:click|preventDefault={toNext}>
             <div class="icon-next-month" aria-label="Next month"></div>
           </button>
         </header>
 
-        {#if showTimePicker && startDate && endDate}
+        {#if showTimePicker}
           <div class="timepicker">
             <input type="time" bind:value={endDateTime} on:input={() => (endDate = updateTime('end', endDate))} />
           </div>
@@ -1055,7 +1092,8 @@
                     on:mouseenter={(e) =>
                       onMouseEnter(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     on:mouseleave={onMouseLeave}
-                    on:click={(e) => onClick(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
+                    on:click|preventDefault={(e) =>
+                      onClick(e, endDateCalendar[weekIndex][dayIndex], endDateMonth, endDateYear)}
                     class:norange={isRange && tempEndDate === startDate}
                   >
                     <span>{endDateCalendar[weekIndex][dayIndex]}</span>
@@ -1149,6 +1187,7 @@
     --datepicker-container-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
     --datepicker-container-font-family: var(--datepicker-font-family);
     --datepicker-container-left: 0;
+    --datepicker-container-top: 105%;
     --datepicker-container-position: absolute;
     --datepicker-container-width: fit-content;
     --datepicker-container-zindex: 99;
@@ -1450,7 +1489,7 @@
 
   .datepicker .calendars-container.show {
     display: grid;
-    top: 105%;
+    top: var(--datepicker-container-top);
   }
 
   .datepicker .calendars-container.range {
@@ -1474,6 +1513,11 @@
     display: none;
     flex-direction: column;
     padding: var(--datepicker-presets-padding);
+  }
+
+  .datepicker .calendars-container.presets .calendar-presets.presets-only {
+    border-right: 0;
+    min-width: 100%;
   }
 
   .datepicker .calendars-container .calendar-presets button {
@@ -1514,6 +1558,10 @@
     padding: var(--datepicker-calendar-padding);
     position: var(--datepicker-calendar-position);
     width: var(--datepicker-calendar-width);
+  }
+
+  .datepicker .calendars-container .calendar.presets-only {
+    display: none;
   }
 
   .datepicker .calendars-container .calendar + .calendar {
@@ -1878,6 +1926,12 @@
 
     .datepicker .calendars-container .calendar header button.hide {
       opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .datepicker .calendars-container.presets .calendar-presets:not(.presets-only) {
+      display: none;
     }
   }
 </style>

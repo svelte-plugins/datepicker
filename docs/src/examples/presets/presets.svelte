@@ -3,16 +3,15 @@
   import { format } from 'date-fns';
   import Prism from 'svelte-prismjs';
 
-  export let isMultipane = true;
-  export let showPresets = true;
-
   export let days = 29;
 
   const today = new Date();
 
   const MILLISECONDS_IN_DAY = 24 * 60 * 60 * 1000;
 
-  const getDateFromToday = (days) => (Date.now() - days * MILLISECONDS_IN_DAY);
+  const getDateFromToday = (days) => {
+    return Date.now() - days * MILLISECONDS_IN_DAY;
+  };
 
   let startDate = getDateFromToday(days);
   let endDate = today;
@@ -24,6 +23,14 @@
   const onClearDates = () => {
     startDate = '';
     endDate = '';
+  };
+
+  const onNavigationChange = (e) => {
+    console.log(e, 'onNavigationChange');
+  };
+
+  const onDateChange = (args) => {
+    console.log(args, 'onDateChange');
   };
 
   const toggleDatePicker = () => (isOpen = !isOpen);
@@ -38,12 +45,14 @@
     bind:isOpen
     bind:startDate
     bind:endDate
+    {onNavigationChange}
+    {onDateChange}
     isRange
-    {isMultipane}
-    {showPresets}
+    showPresets
+    showPresetsOnly
     {...$$restProps}
   >
-    <div class="date-field" on:click={toggleDatePicker} class:open={isOpen}>
+    <div class="date-field" on:click={toggleDatePicker} role="button" tabindex="0" class:open={isOpen}>
       <i class="icon-calendar" />
       <div class="date">
         {#if startDate}
@@ -53,7 +62,7 @@
         {/if}
       </div>
       {#if startDate}
-        <span on:click={onClearDates}>
+        <span role="button" tabindex="0" on:click={onClearDates}>
           <i class="os-icon-x" />
         </span>
       {/if}
@@ -62,7 +71,6 @@
 </div>
 
 <Prism showLineNumbers={true} code={`
-
 <script>
   import { DatePicker } from '@svelte-plugins/datepicker';
   import { format } from 'date-fns';
@@ -87,6 +95,10 @@
     endDate = '';
   };
 
+  const onDateChange = (args) => {
+    console.log(args, 'onDateChange');
+  };
+
   const toggleDatePicker = () => (isOpen = !isOpen);
   const formatDate = (dateString) => dateString && format(new Date(dateString), dateFormat) || '';
 
@@ -95,7 +107,7 @@
 </script>
 
 <div class="date-filter">
-  <DatePicker theme="custom-datepicker" bind:isOpen bind:startDate isRange${isMultipane ? ' isMultipane' : ''}${showPresets ? ' showPresets' : ''}>
+  <DatePicker bind:isOpen bind:startDate bind:endDate isRange showPresets showPresetsOnly {onDateChange}>
     <div class="date-field" on:click={toggleDatePicker} class:open={isOpen}>
       <i class="icon-calendar" />
       <div class="date">
@@ -135,32 +147,6 @@
     height: 14px;
     width: 14px;
   }
-
-  :global(.datepicker[data-picker-theme="custom-datepicker"]) {
-    --datepicker-container-background: #ff66ae;
-    --datepicker-container-border: 1px solid #ff1683;
-
-    --datepicker-calendar-header-text-color: #fff;
-    --datepicker-calendar-dow-color: #fff;
-    --datepicker-calendar-day-color: #fff;
-    --datepicker-calendar-day-color-disabled: pink;
-    --datepicker-calendar-range-selected-background: #ff1683;
-
-    --datepicker-calendar-header-month-nav-background-hover: #ff1683;
-    --datepicker-calendar-header-month-nav-icon-next-filter: invert(100);
-    --datepicker-calendar-header-month-nav-icon-prev-filter: invert(100);
-    --datepicker-calendar-header-year-nav-icon-next-filter: invert(100);
-    --datepicker-calendar-header-year-nav-icon-prev-filter: invert(100);
-
-    --datepicker-calendar-split-border: 1px solid pink;
-
-    --datepicker-presets-border: 1px solid pink;
-    --datepicker-presets-button-background-active: #ff1683;
-    --datepicker-presets-button-color: #fff;
-    --datepicker-presets-button-color-active: #fff;
-    --datepicker-presets-button-color-hover: #333;
-    --datepicker-presets-button-color-focus: #333;
-  }
 </style>
 `} />
 
@@ -184,33 +170,5 @@
     background-size: 14px 14px;
     height: 14px;
     width: 14px;
-  }
-
-  :global(.datepicker[data-picker-theme="custom-datepicker"]) {
-    --datepicker-container-background: #ff66ae;
-    --datepicker-container-border: 1px solid #ff1683;
-
-    --datepicker-calendar-header-text-color: #fff;
-    --datepicker-calendar-dow-color: #fff;
-    --datepicker-calendar-day-color: #fff;
-    --datepicker-calendar-day-color-disabled: pink;
-    --datepicker-calendar-range-selected-background: #ff1683;
-
-    --datepicker-calendar-header-month-nav-background-hover: #ff1683;
-    --datepicker-calendar-header-month-nav-icon-next-filter: invert(100);
-    --datepicker-calendar-header-month-nav-icon-prev-filter: invert(100);
-    --datepicker-calendar-header-year-nav-icon-next-filter: invert(100);
-    --datepicker-calendar-header-year-nav-icon-prev-filter: invert(100);
-
-    --datepicker-calendar-split-border: 1px solid pink;
-
-    --datepicker-presets-border: 1px solid pink;
-    --datepicker-presets-button-background-active: #ff1683;
-    --datepicker-presets-button-color: #fff;
-    --datepicker-presets-button-color-active: #fff;
-    --datepicker-presets-button-color-hover: #333;
-    --datepicker-presets-button-color-focus: #333;
-    --datepicker-spacing: 90px;
-
   }
 </style>

@@ -31,6 +31,10 @@
     console.log(e, 'onNavigationChange');
   };
 
+  const onDateChange = (args) => {
+    console.log(args, 'onDateChange');
+  };
+
   const toggleDatePicker = () => (isOpen = !isOpen);
   const formatDate = (dateString) => dateString && format(new Date(dateString), dateFormat) || '';
 
@@ -44,6 +48,7 @@
     bind:startDate
     bind:endDate
     {onNavigationChange}
+    {onDateChange}
     isRange
     {isMultipane}
     {showPresets}
