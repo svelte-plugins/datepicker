@@ -786,9 +786,14 @@
    * @param {number} preset.start - The start date of the preset range.
    * @param {number} preset.end - The end date of the preset range.
    */
-  const onPresetClick = ({ start, end }) => {
+  const onPresetClick = ({ start, startTime, end, endTime }) => {
     startDate = start;
     endDate = end;
+
+    if (startTime && endTime) {
+      startDateTime = startTime;
+      endDateTime = endTime;
+    }
 
     if (isRange && startDate && endDate) {
       onDateChange({
