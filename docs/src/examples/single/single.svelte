@@ -16,6 +16,10 @@
   const toggleDatePicker = () => (isOpen = !isOpen);
 
   const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
     return dateString && format(new Date(dateString), dateFormat) || '';
   };
 
@@ -53,9 +57,12 @@
   const toggleDatePicker = () => (isOpen = !isOpen);
 
   const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
     return dateString && format(new Date(dateString), dateFormat) || '';
   };
-
   let formattedStartDate = formatDate(startDate);
 
   const onChange = () => {

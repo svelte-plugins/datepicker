@@ -36,7 +36,14 @@
   };
 
   const toggleDatePicker = () => (isOpen = !isOpen);
-  const formatDate = (dateString) => dateString && format(new Date(dateString), dateFormat) || '';
+
+  const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
+    return dateString && format(new Date(dateString), dateFormat) || '';
+  };
 
   $: formattedStartDate = formatDate(startDate);
   $: formattedEndDate = formatDate(endDate);
@@ -98,7 +105,14 @@
   };
 
   const toggleDatePicker = () => (isOpen = !isOpen);
-  const formatDate = (dateString) => dateString && format(new Date(dateString), dateFormat) || '';
+
+  const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
+    return dateString && format(new Date(dateString), dateFormat) || '';
+  };
 
   $: formattedStartDate = formatDate(startDate);
   $: formattedEndDate = formatDate(endDate);
