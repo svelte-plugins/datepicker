@@ -17,6 +17,10 @@
   const toggleDatePicker = () => (isOpen = !isOpen);
 
   const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
     return dateString && format(new Date(dateString), dateFormat) || '';
   };
 
@@ -30,10 +34,14 @@
     console.log(e, 'onNavigationChange');
   };
 
+  const onDateChange = (args) => {
+    console.log(args, 'onDateChange');
+  };
+
   $: formattedStartDate = formatDate(startDate);
 </script>
 
-<DatePicker bind:isOpen bind:startDate bind:showToday {...$$props} {onNavigationChange}>
+<DatePicker bind:isOpen bind:startDate bind:showToday {...$$props} {onNavigationChange} {onDateChange}>
   <input type="text" bind:value={formattedStartDate} on:change={onChange} on:click={toggleDatePicker} />
 </DatePicker>
 
@@ -50,9 +58,12 @@
   const toggleDatePicker = () => (isOpen = !isOpen);
 
   const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
     return dateString && format(new Date(dateString), dateFormat) || '';
   };
-
   let formattedStartDate = formatDate(startDate);
 
   const onChange = () => {

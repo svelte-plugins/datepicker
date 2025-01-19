@@ -72,6 +72,7 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 | isMultipane	      |	If true, two calendar months will be shown side-by-side instead of one.               | `boolean` (default: `false`)
 | isOpen            |	If true, the picker will be shown without user interaction.	                          | `boolean` (default: `false`)
 | showPresets	      |	If true, the picker will show the preset ranges for selection.	                      | `boolean` (default: `false`)
+| showPresetsOnly	  |	If true, the picker will show only preset ranges.	                                    | `boolean` (default: `false`)
 | showYearControls  |	If true, the picker will hide the year navigation controls.	                          | `boolean` (default: `false`)
 | showTimePicker	  |	If true, the picker will show the time picker.	                                      | `boolean` (default: `false`)
 | showToday     	  |	If true, the picker will show a Today button.	                                        | `boolean` (default: `false`)
@@ -84,6 +85,7 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 ### Events
 | Prop               | Description                                                                           | Default                     |
 | :----------------- | :------------------------------------------------------------------------------------ | :-------------------------- |
+| onDateChange	     | Callback function to handle date change events.	                                     | `function`
 | onDayClick	       | Callback function to handle day click events.	                                       | `function`
 | onNavigationChange | Callback function to handle the navigation click event for months and years           | `function`
 
@@ -163,6 +165,7 @@ DatePicker CSS variables:
   --datepicker-container-font-family: var(--datepicker-font-family);
   --datepicker-container-left: 0;
   --datepicker-container-position: absolute;
+  --datepicker-container-top: 105%;
   --datepicker-container-width: fit-content;
   --datepicker-container-zindex: 99;
 

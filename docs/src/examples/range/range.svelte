@@ -31,8 +31,19 @@
     console.log(e, 'onNavigationChange');
   };
 
+  const onDateChange = (args) => {
+    console.log(args, 'onDateChange');
+  };
+
   const toggleDatePicker = () => (isOpen = !isOpen);
-  const formatDate = (dateString) => dateString && format(new Date(dateString), dateFormat) || '';
+
+  const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
+    return dateString && format(new Date(dateString), dateFormat) || '';
+  };
 
   $: formattedStartDate = formatDate(startDate);
   $: formattedEndDate = formatDate(endDate);
@@ -44,6 +55,7 @@
     bind:startDate
     bind:endDate
     {onNavigationChange}
+    {onDateChange}
     isRange
     {isMultipane}
     {showPresets}
@@ -93,7 +105,14 @@
   };
 
   const toggleDatePicker = () => (isOpen = !isOpen);
-  const formatDate = (dateString) => dateString && format(new Date(dateString), dateFormat) || '';
+
+  const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
+    return dateString && format(new Date(dateString), dateFormat) || '';
+  };
 
   $: formattedStartDate = formatDate(startDate);
   $: formattedEndDate = formatDate(endDate);

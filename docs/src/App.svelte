@@ -1,7 +1,7 @@
 <script>
   import { DatePicker } from '@svelte-plugins/datepicker';
 
-  import { RangePicker, SinglePicker, ThemePicker } from './examples';
+  import { PresetsOnlyPicker, RangePicker, SinglePicker, ThemePicker } from './examples';
 
   const today = new Date();
 
@@ -101,6 +101,12 @@
         <td>showPresets</td>
         <td><code>boolean</code></td>
         <td>If <code>true</code>, the picker will show the preset ranges for selection.</td>
+        <td><code>false</code></td>
+      </tr>
+      <tr>
+        <td>showPresetsOnly</td>
+        <td><code>boolean</code></td>
+        <td>If <code>true</code>, the preset ranges will only show. Requires range and showPreset to be set.</td>
         <td><code>false</code></td>
       </tr>
       <tr>
@@ -313,6 +319,12 @@
         <th>Default</th>
       </tr>
       <tr>
+        <td>onDateChange</td>
+        <td><code>function</code></td>
+        <td>Callback function to handle when date changes.</td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
         <td>onDayClick</td>
         <td><code>function</code></td>
         <td>Callback function to handle day click events.</td>
@@ -355,6 +367,12 @@
 
     <div class="example">
       <RangePicker showPresets days={6} />
+    </div>
+
+    <h3>Presets Only</h3>
+
+    <div class="example">
+      <PresetsOnlyPicker />
     </div>
 
     <h3>Time Picker</h3>
