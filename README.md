@@ -30,8 +30,13 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
   const toggleDatePicker = () => (isOpen = !isOpen);
 
   const formatDate = (dateString) => {
+    if (isNaN(new Date(dateString))) {
+      return '';
+    }
+
     return dateString && format(new Date(dateString), dateFormat) || '';
   };
+
 
   let formattedStartDate = formatDate(startDate);
 
