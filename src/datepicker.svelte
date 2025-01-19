@@ -919,7 +919,7 @@
     }
   }
 
-  $: if (startDate && showTimePicker && !initialize) {
+  $: if (showTimePicker && !initialize) {
     startDateTime = getHoursAndMinutes(startDate);
     endDateTime = getHoursAndMinutes(endDate);
     initialize = true;
@@ -972,7 +972,7 @@
         </button>
       </header>
 
-      {#if showTimePicker && startDate}
+      {#if showTimePicker}
         <div class="timepicker" class:show={isRange && !isMultipane}>
           <input type="time" bind:value={startDateTime} on:input={() => (startDate = updateTime('start', startDate))} />
 
@@ -1052,7 +1052,7 @@
           </button>
         </header>
 
-        {#if showTimePicker && startDate && endDate}
+        {#if showTimePicker}
           <div class="timepicker">
             <input type="time" bind:value={endDateTime} on:input={() => (endDate = updateTime('end', endDate))} />
           </div>
