@@ -80,6 +80,7 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/cae0ce6e92634878b6e1a587146d
 | showPresetsOnly	  |	If true, the picker will show only preset ranges.	                                    | `boolean` (default: `false`)
 | showYearControls  |	If true, the picker will hide the year navigation controls.	                          | `boolean` (default: `false`)
 | showTimePicker	  |	If true, the picker will show the time picker.	                                      | `boolean` (default: `false`)
+| showToday     	  |	If true, the picker will show a Today button.	                                        | `boolean` (default: `false`)
 | enableFutureDates	|	If true, the picker will allow the user to select future dates.                       | `boolean` (default: `false`)
 | enablePastDates	  |	If disabled, the picker will prevent the user from selecting anything prior to today.	| `boolean` (default: `true`)
 | theme             | The theme name that should be assigned to the theme data-attribute.                   | `string` (default: `''`)
