@@ -155,6 +155,16 @@ export interface DatePickerProps {
    * Determines if the default font "Rubik" should be loaded.
    */
   includeFont?: boolean;
+
+  /**
+   * Determines if the shortcut for Today button is shown
+   */
+  showToday?: boolean;
+
+  /**
+   * The label for the Today button
+   */
+  todayLabel?: boolean;
 }
 
 export interface DatePickerEvents {

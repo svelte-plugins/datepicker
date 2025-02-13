@@ -1,5 +1,3 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
 exports[`Components: DatePicker > should render a date picker with Monday as start of week 1`] = `
 <body>
   <div>
@@ -4590,3 +4588,4 @@ exports[`Components: DatePicker > should render a single datepicker 1`] = `
   </div>
 </body>
 `;
+
