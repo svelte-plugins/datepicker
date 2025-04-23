@@ -673,7 +673,7 @@
     }
 
     const selectedDateTimestamp = createTimestamp(year, month, day);
-    const todayCompare = normalizeTimestamp(new Date());
+    const todayCompare = normalizeTimestamp(today);
     const selectedCompare = normalizeTimestamp(selectedDateTimestamp);
 
     return todayCompare < selectedCompare;
@@ -693,7 +693,7 @@
     }
 
     const selectedDateTimestamp = createTimestamp(year, month, day);
-    const todayCompare = normalizeTimestamp(new Date());
+    const todayCompare = normalizeTimestamp(today);
     const selectedCompare = normalizeTimestamp(selectedDateTimestamp);
 
     return todayCompare > selectedCompare;
