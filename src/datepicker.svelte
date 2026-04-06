@@ -167,6 +167,15 @@
    */
   export let dowLabels = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
+  $: dowLabels = (() => {
+      const sunday = new Date(2023, 0, 1); // domenica nota
+      return Array.from({ length: 7 }, (_, i) => {
+        const d = new Date(sunday);
+        d.setDate(1 + i);
+        return d.toLocaleString(locale, { weekday: 'short' });
+      });
+    })();
+
   /**
    * An array of month labels.
    * @type {string[]}
@@ -186,11 +195,26 @@
     'December'
   ];
 
+  $: monthLabels = (() => {
+  const fdoy = new Date(2026, 0, 1);
+  return Array.from({ length: 12 }, (_, i) => {
+    const d = new Date(fdoy);
+    d.setMonth(1 + i);
+    return d.toLocaleString(locale, { month: 'long' });
+  });
+})();
+
   /**
    * Determines if the default font "Rubik" should be loaded.
    * @type {boolean}
    */
   export let includeFont = true;
+
+  /**
+   * Determines the locale, 'default' use browsers default.
+   * @type {string}
+   */
+  export let locale = 'default';
 
   /**
    * The number of milliseconds in a day.
