@@ -155,6 +155,11 @@ export interface DatePickerProps {
    * Determines if the default font "Rubik" should be loaded.
    */
   includeFont?: boolean;
+
+  /**
+   * locale to be used, defaults to the browser locale.
+   */
+  locale?: string;
 }
 
 export interface DatePickerEvents {
